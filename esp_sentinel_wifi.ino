@@ -46,14 +46,16 @@ enum PacketType {
   PKT_AUTH_FAIL = 0x13
 };
 
-WiFiServer server(TCP_PORT);
-WiFiClient activeClient;
+#define MAX_CLIENTS 4   // up to 4 phones per ESP node
 
-// Static Memory Buffers (Prevents Heap Fragmentation)
+WiFiServer server(TCP_PORT);
+WiFiClient clients[MAX_CLIENTS];
+bool       isAuthenticated[MAX_CLIENTS];
+uint8_t    currentChallenge[MAX_CLIENTS][16];
+
+// Static buffers — prevents heap fragmentation
 uint8_t rxBuffer[300];
 uint8_t txBuffer[300];
-uint8_t currentChallenge[16];
-bool isAuthenticated = false;
 uint8_t seqCounter = 0;
 unsigned long lastHeapCheck = 0;
 
@@ -97,8 +99,9 @@ void computeHmacSha256(const uint8_t *key, size_t keyLen, const uint8_t *payload
   mbedtls_md_free(&ctx);
 }
 
-void sendPacket(WiFiClient &client, uint8_t type, uint16_t destId, const uint8_t *payload, uint8_t payloadLen, uint8_t flags = 0) {
-  if (!client.connected()) return;
+// ── Send a packet to one specific client slot ─────────────────────────────
+void sendPacketToClient(int idx, uint8_t type, uint16_t destId, const uint8_t *payload, uint8_t payloadLen, uint8_t flags = 0) {
+  if (!clients[idx].connected()) return;
 
   txBuffer[0] = MAGIC_BYTE;
   txBuffer[1] = PROTOCOL_VERSION;
@@ -117,85 +120,35 @@ void sendPacket(WiFiClient &client, uint8_t type, uint16_t destId, const uint8_t
 
   size_t headerAndPayloadLen = 10 + payloadLen;
   uint16_t crc = calculateCrc16(txBuffer, headerAndPayloadLen);
-  txBuffer[headerAndPayloadLen] = (crc >> 8) & 0xFF;
+  txBuffer[headerAndPayloadLen]     = (crc >> 8) & 0xFF;
   txBuffer[headerAndPayloadLen + 1] = crc & 0xFF;
 
-  client.write(txBuffer, headerAndPayloadLen + 2);
-  client.flush();
+  clients[idx].write(txBuffer, headerAndPayloadLen + 2);
+  clients[idx].flush();
 }
 
-void startAuthChallenge(WiFiClient &client) {
-  isAuthenticated = false;
+// ── LOCAL RELAY: forward a raw packet to every authenticated phone
+void relayToLocalClients(int senderIdx, const uint8_t *rawPacket, size_t len) {
+  for (int i = 0; i < MAX_CLIENTS; i++) {
+    if (i == senderIdx)          continue; // skip original sender
+    if (!clients[i].connected()) continue; // skip disconnected
+    if (!isAuthenticated[i])     continue; // skip unauthenticated
+    clients[i].write(rawPacket, len);
+    clients[i].flush();
+    Serial.print(F("[LOCAL] Relayed to slot "));
+    Serial.println(i);
+  }
+}
+
+// ── Start auth challenge for one slot ─────────────────────────────────────
+void startAuthChallenge(int idx) {
+  isAuthenticated[idx] = false;
   // Generate 16 bytes cryptographically pseudo-random challenge
   for (int i = 0; i < 16; i++) {
-    currentChallenge[i] = (uint8_t)random(0, 256);
+    currentChallenge[idx][i] = (uint8_t)random(0, 256);
   }
   Serial.println(F("[SENTINEL] Sending PSK Challenge to client..."));
-  sendPacket(client, PKT_AUTH_REQ, 0x00AA, currentChallenge, 16);
-}
-
-void processIncomingPacket(WiFiClient &client, uint8_t type, uint16_t senderId, const uint8_t *payload, uint8_t payloadLen, uint8_t flags) {
-  // Authentication check
-  if (!isAuthenticated) {
-    if (type == PKT_AUTH_RESP && payloadLen == 32) {
-      // Expected HMAC = HMAC-SHA256(PSK, challenge + NODE_ID + senderId)
-      uint8_t hmacData[20];
-      memcpy(hmacData, currentChallenge, 16);
-      hmacData[16] = (NODE_ID >> 8) & 0xFF;
-      hmacData[17] = NODE_ID & 0xFF;
-      hmacData[18] = (senderId >> 8) & 0xFF;
-      hmacData[19] = senderId & 0xFF;
-
-      uint8_t expectedHmac[32];
-      computeHmacSha256((const uint8_t *)DEFAULT_PSK, strlen(DEFAULT_PSK), hmacData, 20, expectedHmac);
-
-      if (constantTimeCompare(payload, expectedHmac, 32)) {
-        isAuthenticated = true;
-        Serial.println(F("[SENTINEL] Client Authenticated Successfully!"));
-        uint8_t okPayload[3] = { (uint8_t)BOARD_TYPE, (uint8_t)((NODE_ID >> 8) & 0xFF), (uint8_t)(NODE_ID & 0xFF) };
-        sendPacket(client, PKT_AUTH_OK, senderId, okPayload, 3);
-      } else {
-        Serial.println(F("[SENTINEL] AUTH FAILED: Invalid PSK. Dropping client."));
-        sendPacket(client, PKT_AUTH_FAIL, senderId, NULL, 0);
-        client.stop();
-      }
-    } else {
-      Serial.println(F("[SENTINEL] Rejected unauthenticated packet type."));
-      client.stop();
-    }
-    return;
-  }
-
-  // Authenticated Packet Dispatch
-  switch (type) {
-    case PKT_PING: {
-      Serial.println(F("[SENTINEL] Received PING -> Sending ACK/IDENTITY"));
-      uint8_t ackPayload[3] = { (uint8_t)BOARD_TYPE, (uint8_t)((NODE_ID >> 8) & 0xFF), (uint8_t)(NODE_ID & 0xFF) };
-      sendPacket(client, PKT_ACK, senderId, ackPayload, 3);
-      break;
-    }
-
-    case PKT_MESSAGE:
-    case PKT_SOS: {
-      Serial.print(F("[SENTINEL] Chat Message Rx [Flags=0x"));
-      Serial.print(flags, HEX);
-      Serial.print(F("]: "));
-      for (uint8_t i = 0; i < payloadLen; i++) {
-        Serial.print((char)payload[i]);
-      }
-      Serial.println();
-      
-      // Send Acknowledgement back to Phone
-      uint8_t ackVal[1] = { 0x00 };
-      sendPacket(client, PKT_ACK, senderId, ackVal, 1);
-      break;
-    }
-
-    default:
-      Serial.print(F("[SENTINEL] Unknown Packet Type: 0x"));
-      Serial.println(type, HEX);
-      break;
-  }
+  sendPacketToClient(idx, PKT_AUTH_REQ, 0x00AA, currentChallenge[idx], 16);
 }
 
 void setup() {
@@ -205,6 +158,8 @@ void setup() {
   Serial.println(F("\n======================================"));
   Serial.println(F("    SENTINEL SECURE NODE FIRMWARE     "));
   Serial.println(F("======================================"));
+
+  for (int i = 0; i < MAX_CLIENTS; i++) isAuthenticated[i] = false;
 
   // Configure SoftAP
   IPAddress apIP(192, 168, 4, 1);
@@ -224,64 +179,142 @@ void setup() {
   server.setNoDelay(true);
   Serial.print(F("[SENTINEL] TCP Server listening on port "));
   Serial.println(TCP_PORT);
+  Serial.println(F("[SENTINEL] Ready — up to 4 phones per node."));
 }
 
 void loop() {
-  // Check for new client connections
-  if (!activeClient || !activeClient.connected()) {
-    WiFiClient newClient = server.available();
-    if (newClient) {
-      activeClient = newClient;
-      activeClient.setNoDelay(true);
-      Serial.println(F("[SENTINEL] New Phone Connected to TCP Socket."));
-      startAuthChallenge(activeClient);
+  // 1. Accept new client connections
+  WiFiClient newClient = server.available();
+  if (newClient) {
+    bool placed = false;
+    for (int i = 0; i < MAX_CLIENTS; i++) {
+      if (!clients[i] || !clients[i].connected()) {
+        clients[i] = newClient;
+        clients[i].setNoDelay(true);
+        Serial.print(F("[SENTINEL] New Phone Connected → slot "));
+        Serial.println(i);
+        startAuthChallenge(i);
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) {
+      newClient.stop();
+      Serial.println(F("[SENTINEL] All slots full — connection refused."));
     }
   }
 
-  // Handle incoming data stream from connected phone
-  if (activeClient && activeClient.connected() && activeClient.available() >= 12) {
-    // Look for MAGIC byte 0xA5
-    if (activeClient.read() == MAGIC_BYTE) {
-      uint8_t ver = activeClient.read();
-      if (ver == PROTOCOL_VERSION) {
-        uint8_t type = activeClient.read();
-        uint16_t senderId = (activeClient.read() << 8) | activeClient.read();
-        uint16_t destId = (activeClient.read() << 8) | activeClient.read();
-        uint8_t seq = activeClient.read();
-        uint8_t flags = activeClient.read();
-        uint8_t payloadLen = activeClient.read();
+  // 2. Process each connected phone
+  for (int i = 0; i < MAX_CLIENTS; i++) {
+    if (!clients[i] || !clients[i].connected()) continue;
+    if (clients[i].available() >= 12) {
+      // Look for MAGIC byte 0xA5
+      if (clients[i].read() == MAGIC_BYTE) {
+        uint8_t ver = clients[i].read();
+        if (ver == PROTOCOL_VERSION) {
+          uint8_t type = clients[i].read();
+          uint16_t senderId = ((uint16_t)clients[i].read() << 8) | clients[i].read();
+          uint16_t destId = ((uint16_t)clients[i].read() << 8) | clients[i].read();
+          uint8_t seq = clients[i].read();
+          uint8_t flags = clients[i].read();
+          uint8_t payloadLen = clients[i].read();
 
-        // Read Payload
-        size_t bytesRead = 0;
-        unsigned long timeout = millis() + 500;
-        while (bytesRead < payloadLen && millis() < timeout) {
-          if (activeClient.available()) {
-            rxBuffer[10 + bytesRead] = activeClient.read();
-            bytesRead++;
+          // Read Payload
+          size_t bytesRead = 0;
+          unsigned long timeout = millis() + 500;
+          while (bytesRead < payloadLen && millis() < timeout) {
+            if (clients[i].available()) {
+              rxBuffer[10 + bytesRead] = clients[i].read();
+              bytesRead++;
+            }
           }
-        }
 
-        // Read CRC16
-        if (activeClient.available() >= 2) {
-          uint16_t expectedCrc = (activeClient.read() << 8) | activeClient.read();
+          // Read CRC16
+          if (clients[i].available() >= 2) {
+            uint16_t expectedCrc = ((uint16_t)clients[i].read() << 8) | clients[i].read();
 
-          // Reconstruct header in rxBuffer to verify CRC
-          rxBuffer[0] = MAGIC_BYTE;
-          rxBuffer[1] = PROTOCOL_VERSION;
-          rxBuffer[2] = type;
-          rxBuffer[3] = (senderId >> 8) & 0xFF;
-          rxBuffer[4] = senderId & 0xFF;
-          rxBuffer[5] = (destId >> 8) & 0xFF;
-          rxBuffer[6] = destId & 0xFF;
-          rxBuffer[7] = seq;
-          rxBuffer[8] = flags;
-          rxBuffer[9] = payloadLen;
+            // Reconstruct header in rxBuffer to verify CRC
+            rxBuffer[0] = MAGIC_BYTE;
+            rxBuffer[1] = PROTOCOL_VERSION;
+            rxBuffer[2] = type;
+            rxBuffer[3] = (senderId >> 8) & 0xFF;
+            rxBuffer[4] = senderId & 0xFF;
+            rxBuffer[5] = (destId >> 8) & 0xFF;
+            rxBuffer[6] = destId & 0xFF;
+            rxBuffer[7] = seq;
+            rxBuffer[8] = flags;
+            rxBuffer[9] = payloadLen;
 
-          uint16_t actualCrc = calculateCrc16(rxBuffer, 10 + payloadLen);
-          if (actualCrc == expectedCrc) {
-            processIncomingPacket(activeClient, type, senderId, &rxBuffer[10], payloadLen, flags);
-          } else {
-            Serial.println(F("[SENTINEL] CRC Mismatch! Dropping packet."));
+            uint16_t actualCrc = calculateCrc16(rxBuffer, 10 + payloadLen);
+            if (actualCrc == expectedCrc) {
+                // Append CRC to raw buffer for relaying
+                rxBuffer[10 + payloadLen] = (actualCrc >> 8) & 0xFF;
+                rxBuffer[10 + payloadLen + 1] = actualCrc & 0xFF;
+                size_t fullLen = 12 + payloadLen;
+
+                // Authentication Handshake
+                if (!isAuthenticated[i]) {
+                  if (type == PKT_AUTH_RESP && payloadLen == 32) {
+                    uint8_t hmacData[20];
+                    memcpy(hmacData, currentChallenge[i], 16);
+                    hmacData[16] = (NODE_ID >> 8) & 0xFF;
+                    hmacData[17] = NODE_ID & 0xFF;
+                    hmacData[18] = (senderId >> 8) & 0xFF;
+                    hmacData[19] = senderId & 0xFF;
+
+                    uint8_t expectedHmac[32];
+                    computeHmacSha256((const uint8_t *)DEFAULT_PSK, strlen(DEFAULT_PSK), hmacData, 20, expectedHmac);
+
+                    if (constantTimeCompare(&rxBuffer[10], expectedHmac, 32)) {
+                      isAuthenticated[i] = true;
+                      Serial.print(F("[SENTINEL] Slot ")); Serial.print(i); Serial.println(F(" Authenticated Successfully!"));
+                      uint8_t okPayload[3] = { (uint8_t)BOARD_TYPE, (uint8_t)((NODE_ID >> 8) & 0xFF), (uint8_t)(NODE_ID & 0xFF) };
+                      sendPacketToClient(i, PKT_AUTH_OK, senderId, okPayload, 3);
+                    } else {
+                      Serial.print(F("[SENTINEL] AUTH FAILED: Invalid PSK. Dropping slot ")); Serial.println(i);
+                      sendPacketToClient(i, PKT_AUTH_FAIL, senderId, NULL, 0);
+                      clients[i].stop();
+                    }
+                  } else {
+                    Serial.println(F("[SENTINEL] Rejected unauthenticated packet type."));
+                    clients[i].stop();
+                  }
+                  continue; // Don't process further until auth finishes
+                }
+
+                // Authenticated Packet Dispatch
+                switch (type) {
+                  case PKT_PING: {
+                    Serial.println(F("[SENTINEL] Received PING -> Sending ACK"));
+                    uint8_t ackPayload[3] = { (uint8_t)BOARD_TYPE, (uint8_t)((NODE_ID >> 8) & 0xFF), (uint8_t)(NODE_ID & 0xFF) };
+                    sendPacketToClient(i, PKT_ACK, senderId, ackPayload, 3);
+                    break;
+                  }
+
+                  case PKT_MESSAGE:
+                  case PKT_SOS: {
+                    Serial.print(F("[SENTINEL] Chat Message Rx [Flags=0x"));
+                    Serial.print(flags, HEX);
+                    Serial.print(F("] from slot ")); Serial.println(i);
+                    
+                    // Local Relay
+                    relayToLocalClients(i, rxBuffer, fullLen);
+
+                    // Send Acknowledgement back to Phone
+                    uint8_t ackVal[1] = { 0x00 };
+                    sendPacketToClient(i, PKT_ACK, senderId, ackVal, 1);
+                    break;
+                  }
+
+                  default:
+                    Serial.print(F("[SENTINEL] Unknown Packet Type: 0x"));
+                    Serial.println(type, HEX);
+                    break;
+                }
+
+            } else {
+              Serial.println(F("[SENTINEL] CRC Mismatch! Dropping packet."));
+            }
           }
         }
       }
@@ -304,4 +337,3 @@ void loop() {
 
   delay(2); // Prevent watchdog timeout on ESP8266
 }
-

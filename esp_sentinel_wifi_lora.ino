@@ -42,14 +42,29 @@ const long LORA_FREQUENCY = 868E6; // 868 MHz or 915E6 or 433E6
 const uint8_t MAGIC_BYTE = 0xA5;
 const uint8_t PROTOCOL_VERSION = 0x01;
 
+#define MAX_CLIENTS 4   // up to 4 phones per ESP node
+
+// Packet types (mirror Android app constants)
+enum PacketType : uint8_t {
+  PKT_MESSAGE   = 0x01,
+  PKT_PING      = 0x02,
+  PKT_ACK       = 0x03,
+  PKT_SOS       = 0x04,
+  PKT_AUTH_REQ  = 0x10,
+  PKT_AUTH_RESP = 0x11,
+  PKT_AUTH_OK   = 0x12,
+  PKT_AUTH_FAIL = 0x13
+};
+
 WiFiServer server(TCP_PORT);
-WiFiClient activeClient;
+WiFiClient clients[MAX_CLIENTS];
+bool       isAuthenticated[MAX_CLIENTS];
+uint8_t    currentChallenge[MAX_CLIENTS][16];
 
 uint8_t rxBuffer[300];
 uint8_t txBuffer[300];
-uint8_t currentChallenge[16];
-bool isAuthenticated = false;
-uint8_t seqCounter = 0;
+uint8_t seqCounter  = 0;
+bool    loraOnline  = false;
 
 uint16_t calculateCrc16(const uint8_t *data, size_t length) {
   uint16_t crc = 0xFFFF;
@@ -79,208 +94,239 @@ void computeHmacSha256(const uint8_t *key, size_t keyLen, const uint8_t *payload
   mbedtls_md_free(&ctx);
 }
 
-void sendPacketToPhone(WiFiClient &client, uint8_t type, uint16_t destId, const uint8_t *payload, uint8_t payloadLen, uint8_t flags = 0) {
-  if (!client.connected()) return;
+// ── Send a packet to one specific client slot ─────────────────────────────
+void sendPacketToClient(int idx, uint8_t type, uint16_t destId,
+                        const uint8_t *payload, uint8_t payloadLen) {
+  if (!clients[idx].connected()) return;
   txBuffer[0] = MAGIC_BYTE;
   txBuffer[1] = PROTOCOL_VERSION;
   txBuffer[2] = type;
   txBuffer[3] = (NODE_ID >> 8) & 0xFF;
-  txBuffer[4] = NODE_ID & 0xFF;
-  txBuffer[5] = (destId >> 8) & 0xFF;
-  txBuffer[6] = destId & 0xFF;
+  txBuffer[4] =  NODE_ID       & 0xFF;
+  txBuffer[5] = (destId  >> 8) & 0xFF;
+  txBuffer[6] =  destId        & 0xFF;
   txBuffer[7] = ++seqCounter;
-  txBuffer[8] = flags;
+  txBuffer[8] = 0x00; // flags
   txBuffer[9] = payloadLen;
-  if (payloadLen > 0 && payload != NULL) memcpy(&txBuffer[10], payload, payloadLen);
-  size_t headerAndPayloadLen = 10 + payloadLen;
-  uint16_t crc = calculateCrc16(txBuffer, headerAndPayloadLen);
-  txBuffer[headerAndPayloadLen] = (crc >> 8) & 0xFF;
-  txBuffer[headerAndPayloadLen + 1] = crc & 0xFF;
-  client.write(txBuffer, headerAndPayloadLen + 2);
-  client.flush();
+  if (payloadLen > 0 && payload) memcpy(&txBuffer[10], payload, payloadLen);
+  size_t   total = 10 + payloadLen;
+  uint16_t crc   = calculateCrc16(txBuffer, total);
+  txBuffer[total]     = (crc >> 8) & 0xFF;
+  txBuffer[total + 1] =  crc       & 0xFF;
+  clients[idx].write(txBuffer, total + 2);
+  clients[idx].flush();
 }
 
-void forwardPacketToLoRa(const uint8_t *rawPacket, size_t packetLen) {
+// ── LOCAL RELAY: forward a raw packet to every authenticated phone
+//    on this ESP except the original sender.
+//    Pass senderIdx = -1 when the source is LoRa (relay to ALL local phones).
+void relayToLocalClients(int senderIdx, const uint8_t *rawPacket, size_t len) {
+  for (int i = 0; i < MAX_CLIENTS; i++) {
+    if (i == senderIdx)          continue; // skip original sender
+    if (!clients[i].connected()) continue; // skip disconnected
+    if (!isAuthenticated[i])     continue; // skip unauthenticated
+    clients[i].write(rawPacket, len);
+    clients[i].flush();
+    Serial.print(F("[LOCAL] Relayed to slot "));
+    Serial.println(i);
+  }
+}
+
+// ── LORA TX: broadcast raw packet over RF to reach the other ESP ───────────
+void forwardToLoRa(const uint8_t *rawPacket, size_t len) {
+  if (!loraOnline) return;
   LoRa.beginPacket();
-  LoRa.write(rawPacket, packetLen);
-  LoRa.endPacket();
-  Serial.print(F("[LORA-MESH] Broadcasted packet over RF (bytes="));
-  Serial.print(packetLen);
-  Serial.println(F(")"));
+  LoRa.write(rawPacket, len);
+  LoRa.endPacket(false); // non-blocking
+  Serial.print(F("[LORA] TX "));
+  Serial.print(len);
+  Serial.println(F(" bytes over RF"));
 }
 
-void startAuthChallenge(WiFiClient &client) {
-  isAuthenticated = false;
-  for (int i = 0; i < 16; i++) currentChallenge[i] = (uint8_t)random(0, 256);
-  sendPacketToPhone(client, 0x10, 0x00AA, currentChallenge, 16);
+// ── Start auth challenge for one slot ─────────────────────────────────────
+void startAuthChallenge(int idx) {
+  isAuthenticated[idx] = false;
+  for (int i = 0; i < 16; i++) currentChallenge[idx][i] = (uint8_t)random(0, 256);
+  sendPacketToClient(idx, PKT_AUTH_REQ, 0x00AA, currentChallenge[idx], 16);
+  Serial.print(F("[AUTH] Challenge sent to slot "));
+  Serial.println(idx);
 }
 
+// ── Setup ──────────────────────────────────────────────────────────────────
 void setup() {
   Serial.begin(115200);
   delay(300);
-  Serial.println(F("\n[SENTINEL] Initializing Wi-Fi + LoRa Bridge..."));
+  Serial.println(F("\n[SENTINEL] Multi-Client Mesh Node Starting..."));
 
-  // Start LoRa SPI
+  for (int i = 0; i < MAX_CLIENTS; i++) isAuthenticated[i] = false;
+
+  // Init LoRa
   LoRa.setPins(LORA_SS, LORA_RST, LORA_DIO0);
   if (!LoRa.begin(LORA_FREQUENCY)) {
-    Serial.println(F("[ERROR] LoRa module initialization failed! Running in Wi-Fi standalone mode."));
+    Serial.println(F("[LORA] Init FAILED — Wi-Fi-only local relay still works."));
+    loraOnline = false;
   } else {
     LoRa.setSpreadingFactor(7);
     LoRa.setSignalBandwidth(125E3);
     LoRa.setCodingRate4(5);
     LoRa.enableCrc();
-    Serial.println(F("[LORA] Radio Online (868 MHz)"));
+    loraOnline = true;
+    Serial.println(F("[LORA] Radio online (868 MHz, SF7, BW125)"));
   }
 
-  // Start SoftAP & TCP Server
+  // Start SoftAP + TCP server
   WiFi.mode(WIFI_AP);
-  WiFi.softAPConfig(IPAddress(192, 168, 4, 1), IPAddress(192, 168, 4, 1), IPAddress(255, 255, 255, 0));
-  WiFi.softAP(AP_SSID, "12345678");
+  WiFi.softAPConfig(IPAddress(192,168,4,1), IPAddress(192,168,4,1), IPAddress(255,255,255,0));
+  WiFi.softAP(AP_SSID, DEFAULT_PSK);
   server.begin();
   server.setNoDelay(true);
-  Serial.println(F("[SENTINEL] Ready for phone connection on port 8266."));
+
+  Serial.print(F("[SENTINEL] AP: "));       Serial.println(F(AP_SSID));
+  Serial.print(F("[SENTINEL] TCP Port: ")); Serial.println(TCP_PORT);
+  Serial.println(F("[SENTINEL] Ready — up to 4 phones per node."));
 }
 
+// ── Main loop ──────────────────────────────────────────────────────────────
 void loop() {
-  if (!activeClient || !activeClient.connected()) {
-    WiFiClient newClient = server.available();
-    if (newClient) {
-      activeClient = newClient;
-      activeClient.setNoDelay(true);
-      startAuthChallenge(activeClient);
+
+  // 1. Accept new phones into a free slot ───────────────────────────────────
+  WiFiClient newClient = server.available();
+  if (newClient) {
+    bool placed = false;
+    for (int i = 0; i < MAX_CLIENTS; i++) {
+      if (!clients[i] || !clients[i].connected()) {
+        clients[i] = newClient;
+        clients[i].setNoDelay(true);
+        isAuthenticated[i] = false;
+        startAuthChallenge(i);
+        Serial.print(F("[SENTINEL] Phone connected → slot ")); Serial.println(i);
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) {
+      newClient.stop();
+      Serial.println(F("[SENTINEL] All slots full — connection refused."));
     }
   }
 
-  // Check LoRa RF Incoming Packet -> Forward to Phone
-  int packetSize = LoRa.parsePacket();
-  if (packetSize >= 12) {
-    uint8_t loraBuf[300];
-    int idx = 0;
-    while (LoRa.available() && idx < 300) {
-      loraBuf[idx++] = (uint8_t)LoRa.read();
-    }
-    if (loraBuf[0] == MAGIC_BYTE && activeClient && activeClient.connected() && isAuthenticated) {
-      activeClient.write(loraBuf, idx);
-      activeClient.flush();
-      Serial.println(F("[BRIDGE] Relayed LoRa packet to connected Android Phone via TCP"));
-    }
-  }
-
-  // Check Phone Incoming Packet -> Forward to LoRa
-  if (activeClient && activeClient.connected() && activeClient.available() >= 12) {
-    if (activeClient.read() == MAGIC_BYTE) {
-      uint8_t ver = activeClient.read();
-      if (ver == PROTOCOL_VERSION) {
-        uint8_t type = activeClient.read();
-        uint16_t senderId = (activeClient.read() << 8) | activeClient.read();
-        uint16_t destId = (activeClient.read() << 8) | activeClient.read();
-        uint8_t seq = activeClient.read();
-        uint8_t flags = activeClient.read();
-        uint8_t payloadLen = activeClient.read();
-
-        size_t bytesRead = 0;
-        unsigned long timeout = millis() + 500;
-        while (bytesRead < payloadLen && millis() < timeout) {
-          if (activeClient.available()) rxBuffer[10 + bytesRead++] = activeClient.read();
-        }
-
-        if (activeClient.available() >= 2) {
-          uint16_t expectedCrc = (activeClient.read() << 8) | activeClient.read();
-          rxBuffer[0] = MAGIC_BYTE;
-          rxBuffer[1] = PROTOCOL_VERSION;
-          rxBuffer[2] = type;
-          rxBuffer[3] = (senderId >> 8) & 0xFF;
-          rxBuffer[4] = senderId & 0xFF;
-          rxBuffer[5] = (destId >> 8) & 0xFF;
-          rxBuffer[6] = destId & 0xFF;
-          rxBuffer[7] = seq;
-          rxBuffer[8] = flags;
-          rxBuffer[9] = payloadLen;
-
-          uint16_t actualCrc = calculateCrc16(rxBuffer, 10 + payloadLen);
-          if (actualCrc == expectedCrc) {
-            if (!isAuthenticated && type == 0x11 && payloadLen == 32) {
-              uint8_t hmacData[20];
-              memcpy(hmacData, currentChallenge, 16);
-              hmacData[16] = (NODE_ID >> 8) & 0xFF;
-              hmacData[17] = NODE_ID & 0xFF;
-              hmacData[18] = (senderId >> 8) & 0xFF;
-              hmacData[19] = senderId & 0xFF;
-              uint8_t expectedHmac[32];
-              computeHmacSha256((const uint8_t *)DEFAULT_PSK, strlen(DEFAULT_PSK), hmacData, 20, expectedHmac);
-              if (constantTimeCompare(&rxBuffer[10], expectedHmac, 32)) {
-                isAuthenticated = true;
-                uint8_t okPayload[3] = { (uint8_t)BOARD_TYPE, (uint8_t)((NODE_ID >> 8) & 0xFF), (uint8_t)(NODE_ID & 0xFF) };
-                sendPacketToPhone(activeClient, 0x12, senderId, okPayload, 3);
-              }
-            } else if (isAuthenticated) {
-              if (type == 0x01 || type == 0x04) {
-                // Forward chat payload to LoRa
-                rxBuffer[10 + payloadLen] = (actualCrc >> 8) & 0xFF;
-                rxBuffer[10 + payloadLen + 1] = actualCrc & 0xFF;
-                forwardPacketToLoRa(rxBuffer, 12 + payloadLen);
-              } else if (type == 0x02) {
-                // PING -> Send ACK
-                uint8_t ackPayload[3] = { (uint8_t)BOARD_TYPE, (uint8_t)((NODE_ID >> 8) & 0xFF), (uint8_t)(NODE_ID & 0xFF) };
-                sendPacketToPhone(activeClient, 0x03, senderId, ackPayload, 3);
-              }
-            }
-          }
-        }
+  // 2. LoRa RX: packet from the other ESP → relay to ALL local phones ────────
+  if (loraOnline) {
+    int packetSize = LoRa.parsePacket();
+    if (packetSize >= 12 && packetSize <= 300) {
+      uint8_t loraBuf[300];
+      int idx = 0;
+      while (LoRa.available() && idx < 300) loraBuf[idx++] = (uint8_t)LoRa.read();
+      if (loraBuf[0] == MAGIC_BYTE) {
+        Serial.print(F("[LORA] RX ")); Serial.print(idx);
+        Serial.println(F(" bytes → relaying to all local phones"));
+        relayToLocalClients(-1, loraBuf, idx); // -1 = source is LoRa, send to ALL
       }
     }
   }
 
-  delay(2);
+  // 3. Process each connected phone ─────────────────────────────────────────
+  for (int i = 0; i < MAX_CLIENTS; i++) {
+    if (!clients[i] || !clients[i].connected()) continue;
+    if (clients[i].available() < 12)            continue;
+
+    // Parse binary frame header
+    if (clients[i].read() != MAGIC_BYTE)        continue;
+    if (clients[i].read() != PROTOCOL_VERSION)  continue;
+
+    uint8_t  type       = clients[i].read();
+    uint16_t senderId   = ((uint16_t)clients[i].read() << 8) | clients[i].read();
+    uint16_t destId     = ((uint16_t)clients[i].read() << 8) | clients[i].read();
+    uint8_t  seq        = clients[i].read();
+    uint8_t  flags      = clients[i].read();
+    uint8_t  payloadLen = clients[i].read();
+
+    // Read payload with timeout
+    size_t bytesRead = 0;
+    unsigned long deadline = millis() + 500;
+    while (bytesRead < payloadLen && millis() < deadline) {
+      if (clients[i].available()) rxBuffer[10 + bytesRead++] = clients[i].read();
+    }
+
+    // Read CRC
+    if (clients[i].available() < 2) continue;
+    uint16_t expectedCrc = ((uint16_t)clients[i].read() << 8) | clients[i].read();
+
+    // Rebuild full header in rxBuffer for CRC verification
+    rxBuffer[0] = MAGIC_BYTE; rxBuffer[1] = PROTOCOL_VERSION;
+    rxBuffer[2] = type;
+    rxBuffer[3] = (senderId >> 8) & 0xFF; rxBuffer[4] = senderId & 0xFF;
+    rxBuffer[5] = (destId  >> 8) & 0xFF;  rxBuffer[6] = destId  & 0xFF;
+    rxBuffer[7] = seq; rxBuffer[8] = flags; rxBuffer[9] = payloadLen;
+
+    uint16_t actualCrc = calculateCrc16(rxBuffer, 10 + payloadLen);
+    if (actualCrc != expectedCrc) {
+      Serial.println(F("[CRC] Mismatch — packet dropped"));
+      continue;
+    }
+
+    // Append CRC bytes so we have the full raw frame ready for relay/LoRa
+    rxBuffer[10 + payloadLen]     = (actualCrc >> 8) & 0xFF;
+    rxBuffer[10 + payloadLen + 1] =  actualCrc       & 0xFF;
+    size_t fullLen = 12 + payloadLen;
+
+    // ── AUTH HANDSHAKE ──────────────────────────────────────────────────────
+    if (!isAuthenticated[i]) {
+      if (type == PKT_AUTH_RESP && payloadLen == 32) {
+        uint8_t hmacData[20];
+        memcpy(hmacData, currentChallenge[i], 16);
+        hmacData[16] = (NODE_ID  >> 8) & 0xFF; hmacData[17] = NODE_ID  & 0xFF;
+        hmacData[18] = (senderId >> 8) & 0xFF; hmacData[19] = senderId & 0xFF;
+        uint8_t expectedHmac[32];
+        computeHmacSha256((const uint8_t*)DEFAULT_PSK, strlen(DEFAULT_PSK),
+                          hmacData, 20, expectedHmac);
+        if (constantTimeCompare(&rxBuffer[10], expectedHmac, 32)) {
+          isAuthenticated[i] = true;
+          uint8_t ok[3] = { BOARD_TYPE,
+                            (uint8_t)((NODE_ID >> 8) & 0xFF),
+                            (uint8_t)( NODE_ID        & 0xFF) };
+          sendPacketToClient(i, PKT_AUTH_OK, senderId, ok, 3);
+          Serial.print(F("[AUTH] Slot ")); Serial.print(i); Serial.println(F(" authenticated ✓"));
+        } else {
+          sendPacketToClient(i, PKT_AUTH_FAIL, senderId, NULL, 0);
+          clients[i].stop();
+          Serial.print(F("[AUTH] Slot ")); Serial.print(i); Serial.println(F(" REJECTED — wrong PSK"));
+        }
+      } else {
+        clients[i].stop(); // reject any non-auth packet before handshake completes
+      }
+      continue;
+    }
+
+    // ── AUTHENTICATED MESSAGE ROUTING ───────────────────────────────────────
+    switch (type) {
+
+      case PKT_MESSAGE:
+      case PKT_SOS:
+        Serial.print(F("[MSG] From slot ")); Serial.print(i);
+        Serial.println(F(" → local relay + LoRa TX"));
+
+        // Step 1: deliver to all OTHER phones connected to THIS same ESP
+        relayToLocalClients(i, rxBuffer, fullLen);
+
+        // Step 2: broadcast over LoRa so the remote ESP (and its phones) gets it
+        forwardToLoRa(rxBuffer, fullLen);
+        break;
+
+      case PKT_PING: {
+        uint8_t ack[3] = { BOARD_TYPE,
+                           (uint8_t)((NODE_ID >> 8) & 0xFF),
+                           (uint8_t)( NODE_ID        & 0xFF) };
+        sendPacketToClient(i, PKT_ACK, senderId, ack, 3);
+        break;
+      }
+
+      default:
+        Serial.print(F("[SENTINEL] Unknown packet type: 0x"));
+        Serial.println(type, HEX);
+        break;
+    }
+  }
+
+  delay(2); // watchdog-safe yield
 }
-
-/*
- * Sentinel Node - Phase 2 Wi-Fi TCP to SX1276 LoRa Bridge Firmware
- * Compatible with ESP32 and ESP8266 (ESP-12E) with SX1276/SX1278 SPI Module
- *
- * Pinout Configuration for SX1276/SX1278:
- * ESP32:   NSS=18, RST=14, DIO0=26, SCK=5, MISO=19, MOSI=27
- * ESP8266: NSS=15 (D8), RST=16 (D0), DIO0=4 (D2), SCK=14 (D5), MISO=12 (D6), MOSI=13 (D7)
- *
- * Requirements:
- * - Arduino LoRa library (sandeepmistry/arduino-LoRa)
- */
-
-#if defined(ESP32)
-  #include <WiFi.h>
-  #include <SPI.h>
-  #include <LoRa.h>
-  #define BOARD_TYPE 0x01 // ESP32
-  #define AP_SSID "SENTINEL_ESP32"
-  #define LORA_SS 18
-  #define LORA_RST 14
-  #define LORA_DIO0 26
-#elif defined(ESP8266)
-  #include <ESP8266WiFi.h>
-  #include <SPI.h>
-  #include <LoRa.h>
-  #define BOARD_TYPE 0x02 // ESP-12E / ESP8266
-  #define AP_SSID "SENTINEL_ESP12"
-  #define LORA_SS 15
-  #define LORA_RST 16
-  #define LORA_DIO0 4
-#endif
-
-#include <WiFiServer.h>
-#include <WiFiClient.h>
-#include <mbedtls/md.h>
-
-const char DEFAULT_PSK[] = "12345678";
-const uint16_t NODE_ID = 0x00E1;
-const uint16_t TCP_PORT = 8266;
-const long LORA_FREQUENCY = 868E6; // 868 MHz or 915E6 or 433E6
-
-const uint8_t MAGIC_BYTE = 0xA5;
-const uint8_t PROTOCOL_VERSION = 0x01;
-
-WiFiServer server(TCP_PORT);
-WiFiClient activeClient;
-
-uint8_t rxBuffer[300];
-uint8_t txBuffer[300];
-uint8_t currentChallenge[16];
