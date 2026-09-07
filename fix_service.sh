@@ -1,0 +1,3 @@
+sed -i 's/class LoRaMeshService {/import kotlinx.coroutines.Job\n\nclass LoRaMeshService {\n    private var simulationJob: Job? = null/' app/src/main/java/com/example/meshchat/data/LoRaMeshService.kt
+sed -i 's/CoroutineScope(Dispatchers.IO).launch { simulateIncomingMessages() }/simulationJob?.cancel()\n        simulationJob = CoroutineScope(Dispatchers.IO).launch { simulateIncomingMessages() }/' app/src/main/java/com/example/meshchat/data/LoRaMeshService.kt
+sed -i 's/_connectedDevice.value = null/simulationJob?.cancel()\n        _connectedDevice.value = null/' app/src/main/java/com/example/meshchat/data/LoRaMeshService.kt

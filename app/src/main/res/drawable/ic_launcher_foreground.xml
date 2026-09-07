@@ -1,0 +1,93 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Outer Shield Halo / Shadow -->
+    <path
+        android:pathData="M54,23 L79,32 L79,57 C79,72 68,82 54,87 C40,82 29,72 29,57 L29,32 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="23"
+                android:endX="54"
+                android:endY="87"
+                android:type="linear">
+                <item android:color="#3300E5FF" android:offset="0.0" />
+                <item android:color="#2000E676" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Main Sentinel Protective Shield (Primary Outer Shell) -->
+    <path
+        android:pathData="M54,26 L76,34 L76,56 C76,69 66.5,78.5 54,83 C41.5,78.5 32,69 32,56 L32,34 Z"
+        android:strokeWidth="2.5"
+        android:strokeColor="#00E5FF">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="32"
+                android:startY="26"
+                android:endX="76"
+                android:endY="83"
+                android:type="linear">
+                <item android:color="#3500E5FF" android:offset="0.0" />
+                <item android:color="#1A0A1F38" android:offset="0.5" />
+                <item android:color="#3500E676" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Mesh Lattice Grid Lines inside Shield -->
+    <path
+        android:pathData="M38,44 L70,44 M35,56 L73,56 M40,68 L68,68"
+        android:strokeWidth="1.0"
+        android:strokeColor="#4000E5FF"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M54,27 L54,82 M44,38 L44,74 M64,38 L64,74"
+        android:strokeWidth="1.0"
+        android:strokeColor="#4000E5FF"
+        android:fillColor="#00000000" />
+
+    <!-- Radio / Mesh Wave Arcs -->
+    <path
+        android:pathData="M44,42 C47,39 61,39 64,42"
+        android:strokeWidth="2.0"
+        android:strokeColor="#00E676"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Central AI Core Diamond / Eye Emblem -->
+    <path
+        android:pathData="M54,45 L63,54 L54,63 L45,54 Z"
+        android:fillColor="#00E5FF"
+        android:strokeWidth="1.5"
+        android:strokeColor="#FFFFFF" />
+
+    <!-- Center Sentinel Node Pulse -->
+    <path
+        android:pathData="M54,51 L57,54 L54,57 L51,54 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Satellite Mesh Node Dots -->
+    <!-- Top Node -->
+    <path
+        android:pathData="M54,34m-2.2,0a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0"
+        android:fillColor="#00E676" />
+    <!-- Left Node -->
+    <path
+        android:pathData="M40,54m-2.0,0a2.0,2.0 0 1,0 4.0,0a2.0,2.0 0 1,0 -4.0,0"
+        android:fillColor="#00E5FF" />
+    <!-- Right Node -->
+    <path
+        android:pathData="M68,54m-2.0,0a2.0,2.0 0 1,0 4.0,0a2.0,2.0 0 1,0 -4.0,0"
+        android:fillColor="#00E5FF" />
+    <!-- Bottom Anchor Node -->
+    <path
+        android:pathData="M54,73m-2.2,0a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0"
+        android:fillColor="#00E676" />
+
+</vector>

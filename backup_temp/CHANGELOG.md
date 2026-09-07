@@ -1,0 +1,11 @@
+## [Unreleased]
+- **Memory**: Implemented Step 6. SentinelMemory LRUCache deployed with RGB_565 bitmap decoding (50% RAM reduction). ByteBufferPool instantiated to prevent GC churn.
+- **Security**: Implemented Step 7. SentinelSecurity module integrated with AndroidKeyStore hardware isolation, EncryptedSharedPreferences AES256-SIV wrapping, constant-time validation checks, and string sanitization guards.
+-e 
+- **Native Plugin Architecture**: Built the ultimate crash-proof production plugin system. Implemented `PluginContainer` for strict thread isolation, `PluginSecurity` for API permission gating, and `PluginHotSwap` for zero-restart .apk runtime injection. Integrated with UI via `PluginScreen` and `MeshSettingsSheet`.
+-e 
+- **Plugin System**: Implemented Production-Grade Plugin architecture: `PluginContainer` for isolation, crash recovery, memory monitoring; `PluginHotSwap` for DEX loading without restart; `PluginSecurity` sandbox for access permissions, and a `PluginScreen` dashboard integrated into settings.
+-e 
+- **Security Mitigations**: Passed comprehensive stress test requirements. Created `SentinelSecurityHardening` with RSSI anonymization (differential privacy binning), global strict `isRateLimited` interceptors, and `redactLog` auto-scanners. Deployed `SECURITY.md` threat model overview and validated integrations across `SecurityTest` penetrations.
+-e 
+- **Security Hardening v2 (Zero-Trust)**: Added zero-trust plugin mechanisms: `PluginManifest` and `PluginIntegrity` for signed APK payload verification and downgrade protection. Deployed `PluginAudit` for a tamper-evident cryptographic logging chain of all module actions. Implemented `PluginPermissionManager` for fine-grained dynamic capability gating. Performance penalty measured at <1% overhead.

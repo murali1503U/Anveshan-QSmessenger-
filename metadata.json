@@ -1,0 +1,7 @@
+{
+  "name": "Sentinel",
+  "description": "Offline LoRa and Bluetooth mesh messaging with automated on-device privacy protection",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

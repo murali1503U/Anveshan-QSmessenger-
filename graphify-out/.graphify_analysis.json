@@ -1,0 +1,1389 @@
+{
+  "communities": {
+    "0": [
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_constanttimeequals",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_crc32",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_derivekey",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_fastcos",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_fastlog2",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_fastpow2",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_fastsin",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_fastsqrt",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_fft",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_hmac",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_invsubbytes",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_sha512",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_cpumathprovider_subbytes",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_constanttimeequals",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_crc32",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_derivekey",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_fastcos",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_fastlog2",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_fastpow2",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_fastsin",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_fastsqrt",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_fft",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_hmac",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_invsubbytes",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_sha512",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_gpumathprovider_subbytes",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_kt_context",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_kt_floatarray",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_constanttimeequals",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_crc32",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_derivekey",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_fastcos",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_fastlog2",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_fastpow2",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_fastsin",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_fastsqrt",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_fft",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_hmac",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_invsubbytes",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_sha512",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_mathprovider_subbytes",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_constanttimeequals",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_crc32",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_derivekey",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_fastcos",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_fastlog2",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_fastpow2",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_fastsin",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_fastsqrt",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_fft",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_hmac",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_invsubbytes",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_sha512",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmath_subbytes",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmathengine",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmathengine_get",
+      "app_src_main_java_com_example_meshchat_data_math_sentinelmathengine_sentinelmathengine_isgpuavailable"
+    ],
+    "1": [
+      "app_src_main_java_com_example_meshchat_data_bleconstants",
+      "app_src_main_java_com_example_meshchat_data_bleconstants_bleconstants",
+      "app_src_main_java_com_example_meshchat_data_hybridrouter",
+      "app_src_main_java_com_example_meshchat_data_hybridrouter_hybridrouter",
+      "app_src_main_java_com_example_meshchat_data_hybridrouter_hybridrouter_parsepayload",
+      "app_src_main_java_com_example_meshchat_data_hybridrouter_hybridrouter_receive",
+      "app_src_main_java_com_example_meshchat_data_hybridrouter_hybridrouter_send",
+      "app_src_main_java_com_example_meshchat_data_hybridrouter_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_loraqueue",
+      "app_src_main_java_com_example_meshchat_data_loraqueue_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_loraqueue_lorapacketdata",
+      "app_src_main_java_com_example_meshchat_data_loraqueue_loraqueue",
+      "app_src_main_java_com_example_meshchat_data_loraqueue_loraqueue_dequeue",
+      "app_src_main_java_com_example_meshchat_data_loraqueue_loraqueue_enqueue",
+      "app_src_main_java_com_example_meshchat_data_loraqueue_loraqueue_haspending",
+      "app_src_main_java_com_example_meshchat_data_message_message",
+      "app_src_main_java_com_example_meshchat_data_messagedao",
+      "app_src_main_java_com_example_meshchat_data_messagedao_kt_flow",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_clearallmessages",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_clearmessagesbydemo",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_clearmessagesforchannel",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_deletemessagebyid",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_getallmessages",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_getlatestmessageforchannel",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_getmessagesbydemoflow",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_getmessagesforchannel",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_getmessagesforchannelanddemo",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_getrecentmessagesforchannel",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_getrecentmessagesforchannelanddemo",
+      "app_src_main_java_com_example_meshchat_data_messagedao_messagedao_insertmessage",
+      "app_src_main_java_com_example_meshchat_data_messagerepository",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_kt_flow",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_clearall",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_clearchannelmessages",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_clearmessagesbydemo",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_deletebyid",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_getlatestmessage",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_getmessagesbydemo",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_getmessagesforchannel",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_getmessagesforchannelanddemo",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_getrecentchannelmessages",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_getrecentchannelmessagesanddemo",
+      "app_src_main_java_com_example_meshchat_data_messagerepository_messagerepository_insert",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_messageprocessor",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_messageprocessor_afterreceive",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_messageprocessor_beforesend",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_repairmedia",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_triggertestnotification",
+      "app_src_test_java_com_example_meshchat_mediaandsecuritytest",
+      "app_src_test_java_com_example_meshchat_mediaandsecuritytest_mediaandsecuritytest",
+      "app_src_test_java_com_example_meshchat_mediaandsecuritytest_mediaandsecuritytest_testbase64mediaencodinganddecoding",
+      "app_src_test_java_com_example_meshchat_mediaandsecuritytest_mediaandsecuritytest_testbleconstants",
+      "app_src_test_java_com_example_meshchat_mediaandsecuritytest_mediaandsecuritytest_testclassifyhiandsensitivemessages",
+      "app_src_test_java_com_example_meshchat_mediaandsecuritytest_mediaandsecuritytest_testmessagestatecreation",
+      "app_src_test_java_com_example_meshchat_mediaandsecuritytest_mediaandsecuritytest_testsecuresessiondefaultsandtwooptionconfig",
+      "app_src_test_java_com_example_meshchat_meshnetworktest",
+      "app_src_test_java_com_example_meshchat_meshnetworktest_meshnetworktest",
+      "app_src_test_java_com_example_meshchat_meshnetworktest_meshnetworktest_testbleconstants"
+    ],
+    "2": [
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_kt_stateflow",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginentry",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_checkallhealth",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_checkpluginhealth",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_disable",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_enable",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_getall",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_getallplugins",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_getpluginentry",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_handleplugincrash",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_ispluginactive",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_processincoming",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_register",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_uninstall",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_updateflow",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_kt_messageprocessor",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_plugincontext",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_securityprovider",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_securityprovider_decrypt",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_securityprovider_encrypt",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin_ondisable",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin_onenable",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin_oninstall",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin_onuninstall",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin_providemessageprocessor",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin_providesecurityprovider",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin_providetransport",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin_provideuicomponents",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_transportprovider",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_transportprovider_receive",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_transportprovider_send",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_uicomponent",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_uicomponent_onaction",
+      "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_uicomponent_render",
+      "app_src_main_java_com_example_meshchat_ui_pluginscreen",
+      "app_src_main_java_com_example_meshchat_ui_pluginscreen_plugincard",
+      "app_src_main_java_com_example_meshchat_ui_pluginscreen_pluginscreen",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_crashplugin",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_crashplugin_onenable",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_flakyplugin",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_flakyplugin_onenable",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_heavyplugin",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_heavyplugin_onenable",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_heavyplugin_providemessageprocessor",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_heavyplugin_providemessageprocessor_object_messageprocessor_l39",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_heavyplugin_providemessageprocessor_object_messageprocessor_l39_afterreceive",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_heavyplugin_providemessageprocessor_object_messageprocessor_l39_beforesend",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_kt_messageprocessor",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_memoryplugin",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_memoryplugin_onenable",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_plugintest",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_plugintest_testpluginisolation",
+      "app_src_test_java_com_example_meshchat_plugin_plugintest_plugintest_testpluginrecovery"
+    ],
+    "3": [
+      "androidx",
+      "app_src_main_java_com_example_mainactivity",
+      "app_src_main_java_com_example_mainactivity_kt_intent",
+      "app_src_main_java_com_example_mainactivity_mainactivity",
+      "app_src_main_java_com_example_mainactivity_mainactivity_oncreate",
+      "app_src_main_java_com_example_mainactivity_mainactivity_onnewintent",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice_resolveactivetransport",
+      "app_src_main_java_com_example_meshchat_data_meshnotificationmanager",
+      "app_src_main_java_com_example_meshchat_data_meshnotificationmanager_meshnotificationmanager",
+      "app_src_main_java_com_example_meshchat_data_meshnotificationmanager_meshnotificationmanager_createnotificationchannels",
+      "app_src_main_java_com_example_meshchat_data_meshnotificationmanager_meshnotificationmanager_hasnotificationpermission",
+      "app_src_main_java_com_example_meshchat_data_meshnotificationmanager_meshnotificationmanager_showincomingmessagenotification",
+      "app_src_main_java_com_example_meshchat_data_message",
+      "app_src_main_java_com_example_meshchat_data_message_radiotransport",
+      "app_src_main_java_com_example_meshchat_data_message_radiotransport_bluetooth_direct",
+      "app_src_main_java_com_example_meshchat_data_message_radiotransport_hybrid_auto",
+      "app_src_main_java_com_example_meshchat_data_message_radiotransport_lora_mesh",
+      "app_src_main_java_com_example_meshchat_ui_aimodelhubsheet",
+      "app_src_main_java_com_example_meshchat_ui_aimodelhubsheet_aimodelhubsheet",
+      "app_src_main_java_com_example_meshchat_ui_aimodelhubsheet_specitem",
+      "app_src_main_java_com_example_meshchat_ui_aimodelhubsheet_tierrow",
+      "app_src_main_java_com_example_meshchat_ui_channelslistscreen",
+      "app_src_main_java_com_example_meshchat_ui_channelslistscreen_channellistitem",
+      "app_src_main_java_com_example_meshchat_ui_channelslistscreen_channelslistscreen",
+      "app_src_main_java_com_example_meshchat_ui_channelslistscreen_createdirectchatdialog",
+      "app_src_main_java_com_example_meshchat_ui_channelslistscreen_creategroupdialog",
+      "app_src_main_java_com_example_meshchat_ui_channelslistscreen_editcallsigndialog",
+      "app_src_main_java_com_example_meshchat_ui_channelslistscreen_nodeidentitysharedialog",
+      "app_src_main_java_com_example_meshchat_ui_chatscreen",
+      "app_src_main_java_com_example_meshchat_ui_chatscreen_chatscreen",
+      "app_src_main_java_com_example_meshchat_ui_chatscreen_messagebubble",
+      "app_src_main_java_com_example_meshchat_ui_chatscreen_radiotransportselectionsheet",
+      "app_src_main_java_com_example_meshchat_ui_meshpairingsheet",
+      "app_src_main_java_com_example_meshchat_ui_meshpairingsheet_meshpairingsheet",
+      "app_src_main_java_com_example_meshchat_ui_meshsettingssheet",
+      "app_src_main_java_com_example_meshchat_ui_meshsettingssheet_meshsettingssheet",
+      "app_src_main_java_com_example_meshchat_ui_setupwizardscreen",
+      "app_src_main_java_com_example_meshchat_ui_setupwizardscreen_featurerow",
+      "app_src_main_java_com_example_meshchat_ui_setupwizardscreen_permissionstatusrow",
+      "app_src_main_java_com_example_meshchat_ui_setupwizardscreen_setupwizardscreen",
+      "app_src_main_java_com_example_meshchat_ui_setupwizardscreen_steppermissions",
+      "app_src_main_java_com_example_meshchat_ui_setupwizardscreen_stepwelcome",
+      "app_src_main_java_com_example_ui_theme_color",
+      "app_src_main_java_com_example_ui_theme_theme",
+      "app_src_main_java_com_example_ui_theme_theme_myapplicationtheme",
+      "bundle",
+      "color",
+      "componentactivity"
+    ],
+    "4": [
+      "app_src_main_java_com_example_meshchat_data_iotdevice",
+      "app_src_main_java_com_example_meshchat_data_iotdevice_connectionstate",
+      "app_src_main_java_com_example_meshchat_data_iotdevice_connectionstate_connected",
+      "app_src_main_java_com_example_meshchat_data_iotdevice_connectionstate_connecting",
+      "app_src_main_java_com_example_meshchat_data_iotdevice_connectionstate_disconnected",
+      "app_src_main_java_com_example_meshchat_data_iotdevice_connectionstate_scanning",
+      "app_src_main_java_com_example_meshchat_data_iotdevice_iotdevice",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_kt_bluetoothadapter",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_kt_context",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_kt_intent",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_kt_job",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_kt_stateflow",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice_connecttodevice",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice_disconnect",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice_sendmessage",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice_startrouterlistener",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice_startscanning",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice_startscanning_object_broadcastreceiver_l80",
+      "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice_startscanning_object_broadcastreceiver_l80_onreceive",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_kt_job",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_kt_stateflow",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_attemptconnect",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_broadcast",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_disconnect",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_manageconnectedsocket",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_performhandshake",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_processincomingpayload",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_receive",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_setconnectionstate",
+      "app_src_main_java_com_example_meshchat_data_realbluetoothmanager_realbluetoothmanager_startserver",
+      "app_src_test_java_com_example_meshchat_lorameshintegrationtest",
+      "app_src_test_java_com_example_meshchat_lorameshintegrationtest_lorameshintegrationtest",
+      "app_src_test_java_com_example_meshchat_lorameshintegrationtest_lorameshintegrationtest_setup",
+      "app_src_test_java_com_example_meshchat_lorameshintegrationtest_lorameshintegrationtest_testconnecttodeviceacceptswithpresharedcode",
+      "app_src_test_java_com_example_meshchat_lorameshintegrationtest_lorameshintegrationtest_testconnecttodevicerejectswithoutpresharedcodeinproduction",
+      "app_src_test_java_com_example_meshchat_lorameshintegrationtest_lorameshintegrationtest_testresolveactivetransporthybridmode",
+      "app_src_test_java_com_example_meshchat_lorameshintegrationtest_lorameshintegrationtest_teststartscanningdiscoversesp32andloranodes",
+      "bluetoothdevice",
+      "bluetoothsocket",
+      "coroutinescope",
+      "patch_lora_kt_patch_lora"
+    ],
+    "5": [
+      "app_src_main_java_com_example_meshchat_data_securesession",
+      "app_src_main_java_com_example_meshchat_data_securesession_securesession",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_kt_flow",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_deactivateallsessions",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_deletesession",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_getactivesession",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_getactivesessionflow",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_getallsessionsflow",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_insertorupdate",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_ratchetkey",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_setactivesession",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_update",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updatedevelopermode",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updatemodelselection",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updatenodeidentity",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updateqsvmactive",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updateqsvmconfig",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updateqsvmreadystatus",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updatesecuritylevel",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updatesetupcompleted",
+      "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao_updateusercallsign",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_kt_flow",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_generaterandomhexkey",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_generateuniquecallsign",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_generateuniquenodeid",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_initializedefaultsessionifneeded",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_ratchetsessionkey",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_savesession",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_setdemosimulation",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_setdevelopermode",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_setqsvmactive",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_setqsvmconfig",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_setqsvmready",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_setsecuritylevel",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_setsetupcompleted",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_updatemodelselection",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_updatenodeidentity",
+      "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository_updateusercallsign",
+      "app_src_main_java_com_example_meshchat_ui_safetynumberdialog",
+      "app_src_main_java_com_example_meshchat_ui_safetynumberdialog_safetynumberdialog"
+    ],
+    "6": [
+      "app_src_main_java_com_example_meshchat_data_chatchannel",
+      "app_src_main_java_com_example_meshchat_data_chatchannel_channeltype",
+      "app_src_main_java_com_example_meshchat_data_chatchannel_channeltype_broadcast",
+      "app_src_main_java_com_example_meshchat_data_chatchannel_channeltype_direct",
+      "app_src_main_java_com_example_meshchat_data_chatchannel_channeltype_group",
+      "app_src_main_java_com_example_meshchat_data_chatchannel_chatchannel",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_clearunreadcount",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_deletechannel",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_getallchannelsflow",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_getchannel",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_getchannelcount",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_getchannelcountbydemo",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_getchannelflow",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_getchannelsbydemoflow",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_incrementunreadcount",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_insertorupdate",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_setpinned",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_update",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_chatchanneldao_updatelastmessage",
+      "app_src_main_java_com_example_meshchat_data_chatchanneldao_kt_flow",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_clearunread",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_createchannel",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_deletechannel",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_generaterandomhexkey",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_getchannel",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_getchannelflow",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_incrementunread",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_initializedefaultchannelsifneeded",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_togglepin",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_chatchannelrepository_updatelastmessage",
+      "app_src_main_java_com_example_meshchat_data_chatchannelrepository_kt_flow",
+      "app_src_test_java_com_example_meshchat_dualradioandfeaturestest",
+      "app_src_test_java_com_example_meshchat_dualradioandfeaturestest_dualradioandfeaturestest",
+      "app_src_test_java_com_example_meshchat_dualradioandfeaturestest_dualradioandfeaturestest_testchatchannelcreationwithtransports",
+      "app_src_test_java_com_example_meshchat_dualradioandfeaturestest_dualradioandfeaturestest_testhybridradiotransportresolution",
+      "app_src_test_java_com_example_meshchat_dualradioandfeaturestest_dualradioandfeaturestest_testiotdevicediscoverymodel",
+      "app_src_test_java_com_example_meshchat_dualradioandfeaturestest_dualradioandfeaturestest_testmessageradioandsecurityattributes",
+      "app_src_test_java_com_example_meshchat_dualradioandfeaturestest_dualradioandfeaturestest_testradiotransportenumvaluesandproperties",
+      "app_src_test_java_com_example_meshchat_dualradioandfeaturestest_dualradioandfeaturestest_testsecurityheuristicsensitivitydetection"
+    ],
+    "7": [
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_complex",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_complex_abssquared",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_complex_conj",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_complex_minus",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_complex_plus",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_complex_times",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_applyhadamardall",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_applyzrotation",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_applyzzrotation",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_calculateshannonentropy",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_classify",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_classifybatch",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_computequantumkernel",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_computequantumstate",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_evaluateclassfidelity",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_extractfeatures",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_extractsensitivefactors",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_fastcos",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_fastsin",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier_train",
+      "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmresult",
+      "app_src_test_java_com_example_meshchat_debugqsvmtest",
+      "app_src_test_java_com_example_meshchat_debugqsvmtest_debugqsvmtest",
+      "app_src_test_java_com_example_meshchat_debugqsvmtest_debugqsvmtest_debug",
+      "app_src_test_java_com_example_meshchat_qsvmclassifierrigoroustest",
+      "app_src_test_java_com_example_meshchat_qsvmclassifierrigoroustest_qsvmclassifierrigoroustest",
+      "app_src_test_java_com_example_meshchat_qsvmclassifierrigoroustest_qsvmclassifierrigoroustest_testbenigncasual_level1",
+      "app_src_test_java_com_example_meshchat_qsvmclassifierrigoroustest_qsvmclassifierrigoroustest_testenhancedprotection_level3",
+      "app_src_test_java_com_example_meshchat_qsvmclassifierrigoroustest_qsvmclassifierrigoroustest_testmaximumprotection_level4",
+      "app_src_test_java_com_example_meshchat_qsvmclassifierrigoroustest_qsvmclassifierrigoroustest_teststandardprotection_level2",
+      "app_src_test_java_com_example_meshchat_qsvmclassifierrigoroustest_qsvmclassifierrigoroustest_testtrickyedgecases",
+      "app_src_test_java_com_example_meshchat_qsvmextremeadversarialtest",
+      "app_src_test_java_com_example_meshchat_qsvmextremeadversarialtest_qsvmextremeadversarialtest",
+      "app_src_test_java_com_example_meshchat_qsvmextremeadversarialtest_qsvmextremeadversarialtest_testhiddenpayloadinbenigntext",
+      "app_src_test_java_com_example_meshchat_qsvmextremeadversarialtest_qsvmextremeadversarialtest_testleetspeakextreme",
+      "app_src_test_java_com_example_meshchat_qsvmextremeadversarialtest_qsvmextremeadversarialtest_testzalgoandspacedobfuscation",
+      "app_src_test_java_com_example_meshchat_qsvmextremeadversarialtest_qsvmextremeadversarialtest_testzerowidthobfuscation",
+      "doublearray",
+      "interpreter"
+    ],
+    "8": [
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity_kt_context",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity_sentinelsecurity",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity_sentinelsecurity_constanttimeequals",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity_sentinelsecurity_getorcreatekey",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity_sentinelsecurity_getsecureprefs",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity_sentinelsecurity_sanitizeinput",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurity_sentinelsecurity_validatemessage",
+      "app_src_main_java_com_example_meshchat_scripting_janinoengine",
+      "app_src_main_java_com_example_meshchat_scripting_janinoengine_janinoengine",
+      "app_src_main_java_com_example_meshchat_scripting_janinoengine_janinoengine_compile",
+      "app_src_main_java_com_example_meshchat_scripting_janinoengine_janinoengine_process",
+      "app_src_main_java_com_example_meshchat_scripting_luaengine",
+      "app_src_main_java_com_example_meshchat_scripting_luaengine_luaengine",
+      "app_src_main_java_com_example_meshchat_scripting_luaengine_luaengine_compile",
+      "app_src_main_java_com_example_meshchat_scripting_luaengine_luaengine_process",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_dynamicscriptplugin",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_dynamicscriptplugin_providemessageprocessor",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_dynamicscriptplugin_providemessageprocessor_object_messageprocessor_l22",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_dynamicscriptplugin_providemessageprocessor_object_messageprocessor_l22_afterreceive",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_dynamicscriptplugin_providemessageprocessor_object_messageprocessor_l22_beforesend",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_dynamicscriptplugin_providemessageprocessor_object_messageprocessor_l22_executesafely",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_kt_messageprocessor",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_kt_stateflow",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_scriptmanager",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_scriptmanager_compileandregister",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_scriptmanager_getprebuiltscripts",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_scriptmanager_load",
+      "app_src_main_java_com_example_meshchat_scripting_scriptmanager_scriptmanager_unload",
+      "app_src_main_java_com_example_meshchat_scripting_scripttype",
+      "app_src_main_java_com_example_meshchat_scripting_scripttype_scriptengine",
+      "app_src_main_java_com_example_meshchat_scripting_scripttype_scriptengine_compile",
+      "app_src_main_java_com_example_meshchat_scripting_scripttype_scriptengine_process",
+      "app_src_main_java_com_example_meshchat_scripting_scripttype_scripttype",
+      "app_src_main_java_com_example_meshchat_scripting_scripttype_scripttype_java",
+      "app_src_main_java_com_example_meshchat_scripting_scripttype_scripttype_lua",
+      "app_src_main_java_com_example_meshchat_ui_scripteditorscreen",
+      "app_src_main_java_com_example_meshchat_ui_scripteditorscreen_scripteditorscreen",
+      "secretkey"
+    ],
+    "9": [
+      "androidviewmodel",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_assistantmessage",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_clearchathistory",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_clearcli",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_clearcurrentchathistory",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_clearpacketinspector",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_clearsearchquery",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_completesetup",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_connecttodevice",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_createnewdirectchat",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_createnewgroup",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_deletechannel",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_deletemessage",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_disconnect",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_executeclicommand",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_randomizeusercallsign",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_resetsetup",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_rotatesessionkey",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_selectanddownloadmodel",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_selectchannel",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_sendassistantmessage",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_sendmedia",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_setdevelopermode",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_setpendingmedia",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_setsearchquery",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_setsecurityenginemode",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_setsecuritylevel",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_setselectedradiotransport",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_setthememode",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_startscanning",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_toggledevelopermode",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_togglepinchannel",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_updateusercallsign",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_kt_context",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_kt_stateflow",
+      "com",
+      "uri"
+    ],
+    "10": [
+      "app_src_main_java_com_example_meshchat_data_sentinelpacker",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacker_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacker_sentinelpacker",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacker_sentinelpacker_crc16",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacker_sentinelpacker_pack",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_packettype",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_packettype_ack",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_packettype_file",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_packettype_image",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_packettype_location",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_packettype_message",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_packettype_sos",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_sentinelpacket",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_sentinelpacket_equals",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_sentinelpacket_frombytearray",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_sentinelpacket_hashcode",
+      "app_src_main_java_com_example_meshchat_data_sentinelpacket_sentinelpacket_tobytearray",
+      "app_src_main_java_com_example_meshchat_perf_sentinelflows",
+      "app_src_main_java_com_example_meshchat_perf_sentinelflows_kt_stateflow",
+      "app_src_main_java_com_example_meshchat_perf_sentinelflows_sentinelflows",
+      "app_src_main_java_com_example_meshchat_perf_sentinelflows_sentinelflows_emitincoming",
+      "app_src_main_java_com_example_meshchat_perf_sentinelflows_sentinelflows_handlepacket",
+      "app_src_main_java_com_example_meshchat_perf_sentinelflows_sentinelflows_processincoming",
+      "app_src_main_java_com_example_meshchat_perf_sentinelflows_sentinelflows_setconnectionstate",
+      "app_src_main_java_com_example_meshchat_perf_sentinellut",
+      "app_src_main_java_com_example_meshchat_perf_sentinellut_sentinellut",
+      "app_src_main_java_com_example_meshchat_perf_sentinelstate",
+      "app_src_main_java_com_example_meshchat_perf_sentinelstate_sentinelstate",
+      "app_src_main_java_com_example_meshchat_perf_sentinelstate_sentinelstate_addnode",
+      "app_src_main_java_com_example_meshchat_perf_sentinelstate_sentinelstate_dequeue",
+      "app_src_main_java_com_example_meshchat_perf_sentinelstate_sentinelstate_dequeuebatch",
+      "app_src_main_java_com_example_meshchat_perf_sentinelstate_sentinelstate_enqueue",
+      "app_src_main_java_com_example_meshchat_perf_sentinelstate_sentinelstate_removenode",
+      "sharedflow"
+    ],
+    "11": [
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine",
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine_qsvmsecurityengine",
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine_qsvmsecurityengine_analyzeprioritylevel",
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine_qsvmsecurityengine_analyzesecurity",
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine_qsvmsecurityengine_analyzesecuritybatch",
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine_qsvmsecurityengine_determineunifiedpriority",
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine_qsvmsecurityengine_evaluatelightweightpriority",
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine_qsvmsecurityengine_getquantummetrics",
+      "app_src_main_java_com_example_meshchat_ai_qsvmsecurityengine_qsvmsecurityengine_trainqsvm",
+      "app_src_main_java_com_example_meshchat_ai_securitydecision",
+      "app_src_main_java_com_example_meshchat_ai_securitydecision_securitydecision",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_cliline",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_clilinetype",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_clilinetype_accent",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_clilinetype_command",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_clilinetype_error",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_clilinetype_output",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_clilinetype_success",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_clilinetype_warning",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_executecommand",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_handleai",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_handlebenchmark",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_handlehelp",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_handlemesh",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_handleqsvm",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_handleradio",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_handlesecurity",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_handlesession",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_parsecommandargs",
+      "app_src_main_java_com_example_meshchat_cli_meshcliengine_meshcliengine_rundecision",
+      "app_src_main_java_com_example_meshchat_ui_terminalconsolesheet",
+      "app_src_main_java_com_example_meshchat_ui_terminalconsolesheet_clilineitem",
+      "app_src_main_java_com_example_meshchat_ui_terminalconsolesheet_terminalconsolesheet"
+    ],
+    "12": [
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatmeshengine",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatmeshengine_buildroute",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatmeshengine_derivepostquantumkey",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatmeshengine_deriveratchetkey",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatmeshengine_encryptaesgcm",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatmeshengine_packmessage",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatmeshengine_tracerelaysteps",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatpacket",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_bitchatsamplepeer",
+      "app_src_main_java_com_example_meshchat_data_bitchatmeshengine_relaytracestep",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoconscrypt",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoconscrypt_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoconscrypt_sentinelcryptoconscrypt",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoconscrypt_sentinelcryptoconscrypt_aesgcmdecrypt",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoconscrypt_sentinelcryptoconscrypt_aesgcmencrypt",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoconscrypt_sentinelcryptoconscrypt_hmac",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoconscrypt_sentinelcryptoconscrypt_sha512",
+      "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager_processoutgoing",
+      "app_src_main_java_com_example_meshchat_ui_bitchatinspectorsheet",
+      "app_src_main_java_com_example_meshchat_ui_bitchatinspectorsheet_bitchatinspectorsheet",
+      "app_src_main_java_com_example_meshchat_ui_bitchatinspectorsheet_dynamiccomputeexplanationcard",
+      "app_src_main_java_com_example_meshchat_ui_bitchatinspectorsheet_packetdetailscard",
+      "app_src_main_java_com_example_meshchat_ui_bitchatinspectorsheet_relayhopstepitem",
+      "app_src_main_java_com_example_meshchat_ui_bitchatinspectorsheet_samplepeercard",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_inspectmessagepacket",
+      "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel_sendmessage"
+    ],
+    "13": [
+      "app_src_main_java_com_example_meshchat_data_lorahal",
+      "app_src_main_java_com_example_meshchat_data_lorahal_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal_begin",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal_getrssi",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal_getsnr",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal_isavailable",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal_receive",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal_send",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal_sleep",
+      "app_src_main_java_com_example_meshchat_data_lorahal_lorahal_wake",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora_begin",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora_getrssi",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora_getsnr",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora_isavailable",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora_receive",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora_send",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora_sleep",
+      "app_src_main_java_com_example_meshchat_data_lorahal_sx1278lora_wake"
+    ],
+    "14": [
+      "app_src_main_java_com_example_meshchat_data_sentinelimagepacker",
+      "app_src_main_java_com_example_meshchat_data_sentinelimagepacker_kt_bitmap",
+      "app_src_main_java_com_example_meshchat_data_sentinelimagepacker_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_sentinelimagepacker_sentinelimagepacker",
+      "app_src_main_java_com_example_meshchat_data_sentinelimagepacker_sentinelimagepacker_compressimage",
+      "app_src_main_java_com_example_meshchat_data_sentinelimagepacker_sentinelimagepacker_decompressimage",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_bytebufferpool",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_bytebufferpool_borrow",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_bytebufferpool_returnbuffer",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_kt_bitmap",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_kt_bitmapfactory",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_sentinelmemory",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_sentinelmemory_calculateinsamplesize",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmemory_sentinelmemory_loadbitmapoptimized"
+    ],
+    "15": [
+      "app_src_main_java_com_example_meshchat_ai_geminiservice",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_candidate",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_content",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_geminiapiservice",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_geminiapiservice_generatecontent",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_geminisecurityanalyzer",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_geminisecurityanalyzer_determineprioritylevel",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_geminisecurityanalyzer_evaluatelightweightpriority",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_geminisecurityanalyzer_requiresencryption",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_generatecontentrequest",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_generatecontentresponse",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_meshassistant",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_meshassistant_getresponse",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_part",
+      "app_src_main_java_com_example_meshchat_ai_geminiservice_retrofitclient"
+    ],
+    "16": [
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission_access_bluetooth",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission_access_camera",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission_access_files",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission_access_gps",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission_access_microphone",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission_access_network",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission_receive_messages",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_permission_send_messages",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_pluginsecurity",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_pluginsecurity_grantpermission",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_pluginsecurity_requestpermission",
+      "app_src_main_java_com_example_meshchat_plugin_pluginsecurity_pluginsecurity_revokepermission"
+    ],
+    "17": [
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_kt_bitmap",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_kt_bitmapfactory",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_kt_bluetoothadapter",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_kt_context",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_sentineledgecases",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_sentineledgecases_calculateinsamplesize",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_sentineledgecases_initializemodel",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_sentineledgecases_isduplicate",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_sentineledgecases_loadimageoptimized",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_sentineledgecases_safestartdiscovery",
+      "app_src_main_java_com_example_meshchat_util_sentineledgecases_sentineledgecases_sendlongmessage"
+    ],
+    "18": [
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_kt_context",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap_initialize",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap_installplugin",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap_reloadall",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap_scanfornewplugins",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap_startfilewatcher",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap_startfilewatcher_object_fileobserver_l56",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap_startfilewatcher_object_fileobserver_l56_onevent",
+      "app_src_main_java_com_example_meshchat_plugin_pluginhotswap_pluginhotswap_uninstallplugin"
+    ],
+    "19": [
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_kt_context",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_pluginrecovery",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_pluginrecovery_attemptrecovery",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_pluginrecovery_logrecovery",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_recoveryevent",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_recoverytype",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_recoverytype_crash_recovery",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_recoverytype_manual_recovery",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_recoverytype_memory_recovery",
+      "app_src_main_java_com_example_meshchat_plugin_pluginrecovery_recoverytype_timeout_recovery"
+    ],
+    "20": [
+      "app_src_main_java_com_example_meshchat_perf_sentinelpriorityqueue",
+      "app_src_main_java_com_example_meshchat_perf_sentinelpriorityqueue_prioritizedtask",
+      "app_src_main_java_com_example_meshchat_perf_sentinelpriorityqueue_prioritizedtask_compareto",
+      "app_src_main_java_com_example_meshchat_perf_sentinelpriorityqueue_prioritizedtask_run",
+      "app_src_main_java_com_example_meshchat_perf_sentinelpriorityqueue_sentinelpriorityqueue",
+      "app_src_main_java_com_example_meshchat_perf_sentinelpriorityqueue_sentinelpriorityqueue_poll",
+      "app_src_main_java_com_example_meshchat_perf_sentinelpriorityqueue_sentinelpriorityqueue_submitbackground",
+      "app_src_main_java_com_example_meshchat_perf_sentinelpriorityqueue_sentinelpriorityqueue_submitcritical",
+      "comparable",
+      "runnable"
+    ],
+    "21": [
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentineljankdetector",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentineljankdetector_getjankstats",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentineljankdetector_startmonitoring",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentinelmemory",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentinelmemory_optimizeforsmoothness",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentinelmemory_triggergcifneeded",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentineluithread",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentineluithread_post",
+      "app_src_main_java_com_example_meshchat_util_sentinelperformance_sentineluithread_run"
+    ],
+    "22": [
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer",
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer_error",
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer_kt_t",
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer_plugincontainer",
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer_plugincontainer_checkmemory",
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer_plugincontainer_execute",
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer_pluginresult",
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer_success",
+      "app_src_main_java_com_example_meshchat_plugin_plugincontainer_timeout"
+    ],
+    "23": [
+      "app_src_main_java_com_example_meshchat_data_appdatabase",
+      "app_src_main_java_com_example_meshchat_data_appdatabase_appdatabase",
+      "app_src_main_java_com_example_meshchat_data_appdatabase_appdatabase_chatchanneldao",
+      "app_src_main_java_com_example_meshchat_data_appdatabase_appdatabase_getdatabase",
+      "app_src_main_java_com_example_meshchat_data_appdatabase_appdatabase_messagedao",
+      "app_src_main_java_com_example_meshchat_data_appdatabase_appdatabase_securesessiondao",
+      "app_src_main_java_com_example_meshchat_data_appdatabase_kt_context",
+      "roomdatabase"
+    ],
+    "24": [
+      "app_src_main_java_com_example_meshchat_plugin_pluginaudit",
+      "app_src_main_java_com_example_meshchat_plugin_pluginaudit_auditentry",
+      "app_src_main_java_com_example_meshchat_plugin_pluginaudit_pluginaudit",
+      "app_src_main_java_com_example_meshchat_plugin_pluginaudit_pluginaudit_getchainsize",
+      "app_src_main_java_com_example_meshchat_plugin_pluginaudit_pluginaudit_hashdata",
+      "app_src_main_java_com_example_meshchat_plugin_pluginaudit_pluginaudit_log",
+      "app_src_main_java_com_example_meshchat_plugin_pluginaudit_pluginaudit_verifychain"
+    ],
+    "25": [
+      "app_src_main_java_com_example_meshchat_data_sentinelcompression",
+      "app_src_main_java_com_example_meshchat_data_sentinelcompression_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_data_sentinelcompression_sentinelcompression",
+      "app_src_main_java_com_example_meshchat_data_sentinelcompression_sentinelcompression_compress",
+      "app_src_main_java_com_example_meshchat_data_sentinelcompression_sentinelcompression_compresscoordinates",
+      "app_src_main_java_com_example_meshchat_data_sentinelcompression_sentinelcompression_decompress"
+    ],
+    "26": [
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurityhardening",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurityhardening_sentinelsecurityhardening",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurityhardening_sentinelsecurityhardening_anonymizerssi",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurityhardening_sentinelsecurityhardening_isratelimited",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurityhardening_sentinelsecurityhardening_redactlog",
+      "app_src_main_java_com_example_meshchat_perf_sentinelsecurityhardening_sentinelsecurityhardening_verifypluginsignature"
+    ],
+    "27": [
+      "app_src_main_java_com_example_meshchat_perf_sentinelexecutor",
+      "app_src_main_java_com_example_meshchat_perf_sentinelexecutor_kt_t",
+      "app_src_main_java_com_example_meshchat_perf_sentinelexecutor_sentinelexecutor",
+      "app_src_main_java_com_example_meshchat_perf_sentinelexecutor_sentinelexecutor_submit",
+      "app_src_main_java_com_example_meshchat_perf_sentinelexecutor_sentinelexecutor_submitparallel"
+    ],
+    "28": [
+      "app_src_main_java_com_example_meshchat_perf_sentinelfastcollections",
+      "app_src_main_java_com_example_meshchat_perf_sentinelfastcollections_sentinelfastcollections",
+      "app_src_main_java_com_example_meshchat_perf_sentinelfastcollections_sentinelfastcollections_addnode",
+      "app_src_main_java_com_example_meshchat_perf_sentinelfastcollections_sentinelfastcollections_clearcache",
+      "app_src_main_java_com_example_meshchat_perf_sentinelfastcollections_sentinelfastcollections_isseen"
+    ],
+    "29": [
+      "app_src_main_java_com_example_meshchat_perf_sentinelmatrix",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmatrix_kt_floatarray",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmatrix_sentinelmatrix",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmatrix_sentinelmatrix_multiply",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmatrix_sentinelmatrix_sigmoid"
+    ],
+    "30": [
+      "app_src_main_java_com_example_meshchat_plugin_pluginintegrity",
+      "app_src_main_java_com_example_meshchat_plugin_pluginintegrity_pluginintegrity",
+      "app_src_main_java_com_example_meshchat_plugin_pluginintegrity_pluginintegrity_hashfile",
+      "app_src_main_java_com_example_meshchat_plugin_pluginintegrity_pluginintegrity_verifymanifest",
+      "app_src_main_java_com_example_meshchat_plugin_pluginintegrity_pluginmanifest"
+    ],
+    "31": [
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoutils",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoutils_kt_bytearray",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoutils_sentinelcryptoutils",
+      "app_src_main_java_com_example_meshchat_perf_sentinelcryptoutils_sentinelcryptoutils_constanttimeequals"
+    ],
+    "32": [
+      "app_src_main_java_com_example_meshchat_perf_sentineldispatchers",
+      "app_src_main_java_com_example_meshchat_perf_sentineldispatchers_sentineldispatchers",
+      "app_src_main_java_com_example_meshchat_perf_sentineldispatchers_sentineldispatchers_monitorload",
+      "coroutinedispatcher"
+    ],
+    "33": [
+      "app_src_main_java_com_example_meshchat_perf_sentinelmessagequeue",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmessagequeue_sentinelmessagequeue",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmessagequeue_sentinelmessagequeue_publish",
+      "app_src_main_java_com_example_meshchat_perf_sentinelmessagequeue_sentinelmessagequeue_shutdown"
+    ],
+    "34": [
+      "app_src_main_java_com_example_meshchat_plugin_pluginpermissionmanager",
+      "app_src_main_java_com_example_meshchat_plugin_pluginpermissionmanager_pluginpermissionmanager",
+      "app_src_main_java_com_example_meshchat_plugin_pluginpermissionmanager_pluginpermissionmanager_checkpermission",
+      "app_src_main_java_com_example_meshchat_plugin_pluginpermissionmanager_pluginpermissionmanager_requestpermission"
+    ],
+    "35": [
+      "app_src_test_java_com_example_exampleunittest",
+      "app_src_test_java_com_example_exampleunittest_exampleunittest",
+      "app_src_test_java_com_example_exampleunittest_exampleunittest_addition_iscorrect"
+    ],
+    "36": [
+      "fix_service",
+      "fix_service_sh__entry"
+    ],
+    "37": [
+      "fix_smart_cast",
+      "fix_smart_cast_fix_file"
+    ],
+    "38": [
+      "patch_isenabled",
+      "patch_isenabled_fix_file"
+    ],
+    "39": [
+      "setup_graphify",
+      "setup_graphify_run"
+    ],
+    "40": [
+      "app_build_gradle"
+    ],
+    "41": [
+      "app_src_main_java_com_example_ui_theme_type"
+    ],
+    "42": [
+      "build_gradle"
+    ],
+    "43": [
+      "clean_ui_modes"
+    ],
+    "44": [
+      "fix"
+    ],
+    "45": [
+      "fix_agp9"
+    ],
+    "46": [
+      "fix_andon"
+    ],
+    "47": [
+      "fix_build"
+    ],
+    "48": [
+      "fix_build2"
+    ],
+    "49": [
+      "fix_build3"
+    ],
+    "50": [
+      "fix_build4"
+    ],
+    "51": [
+      "fix_build5"
+    ],
+    "52": [
+      "fix_build7"
+    ],
+    "53": [
+      "fix_build8"
+    ],
+    "54": [
+      "fix_build9"
+    ],
+    "55": [
+      "fix_buildconfig"
+    ],
+    "56": [
+      "fix_deps"
+    ],
+    "57": [
+      "fix_gemini"
+    ],
+    "58": [
+      "fix_imports"
+    ],
+    "59": [
+      "fix_kotlin_plugin"
+    ],
+    "60": [
+      "fix_notification"
+    ],
+    "61": [
+      "fix_smart_cast2"
+    ],
+    "62": [
+      "patch_andon"
+    ],
+    "63": [
+      "patch_channels"
+    ],
+    "64": [
+      "patch_channels_2"
+    ],
+    "65": [
+      "patch_channels_3"
+    ],
+    "66": [
+      "patch_cls"
+    ],
+    "67": [
+      "patch_connect"
+    ],
+    "68": [
+      "patch_cvm"
+    ],
+    "69": [
+      "patch_cvm2"
+    ],
+    "70": [
+      "patch_cvm3"
+    ],
+    "71": [
+      "patch_db"
+    ],
+    "72": [
+      "patch_db2"
+    ],
+    "73": [
+      "patch_gradle"
+    ],
+    "74": [
+      "patch_image"
+    ],
+    "75": [
+      "patch_imports"
+    ],
+    "76": [
+      "patch_lora_py_patch_lora"
+    ],
+    "77": [
+      "patch_loramesh"
+    ],
+    "78": [
+      "patch_loramesh2"
+    ],
+    "79": [
+      "patch_loramesh3"
+    ],
+    "80": [
+      "patch_packet"
+    ],
+    "81": [
+      "patch_pairing"
+    ],
+    "82": [
+      "patch_pairing_2"
+    ],
+    "83": [
+      "patch_pairing_3"
+    ],
+    "84": [
+      "patch_pairing_4"
+    ],
+    "85": [
+      "patch_perms"
+    ],
+    "86": [
+      "patch_perms_location"
+    ],
+    "87": [
+      "patch_plugin"
+    ],
+    "88": [
+      "patch_plugin2"
+    ],
+    "89": [
+      "patch_plugin_enabled"
+    ],
+    "90": [
+      "patch_plugin_manager"
+    ],
+    "91": [
+      "patch_qsvm"
+    ],
+    "92": [
+      "patch_qsvm2"
+    ],
+    "93": [
+      "patch_qsvm3"
+    ],
+    "94": [
+      "patch_recovery"
+    ],
+    "95": [
+      "patch_remove_toggle"
+    ],
+    "96": [
+      "patch_remove_toggle2"
+    ],
+    "97": [
+      "patch_repo"
+    ],
+    "98": [
+      "patch_screen"
+    ],
+    "99": [
+      "patch_service"
+    ],
+    "100": [
+      "patch_settings"
+    ],
+    "101": [
+      "patch_settings_2"
+    ],
+    "102": [
+      "patch_test"
+    ],
+    "103": [
+      "patch_ui"
+    ],
+    "104": [
+      "patch_viewmodel"
+    ],
+    "105": [
+      "patch_viewmodel2"
+    ],
+    "106": [
+      "patch_vm"
+    ],
+    "107": [
+      "patch_vm_10"
+    ],
+    "108": [
+      "patch_vm_11"
+    ],
+    "109": [
+      "patch_vm_12"
+    ],
+    "110": [
+      "patch_vm_13"
+    ],
+    "111": [
+      "patch_vm_2"
+    ],
+    "112": [
+      "patch_vm_3"
+    ],
+    "113": [
+      "patch_vm_4"
+    ],
+    "114": [
+      "patch_vm_5"
+    ],
+    "115": [
+      "patch_vm_6"
+    ],
+    "116": [
+      "patch_vm_7"
+    ],
+    "117": [
+      "patch_vm_8"
+    ],
+    "118": [
+      "patch_vm_9"
+    ],
+    "119": [
+      "rewrite_service"
+    ],
+    "120": [
+      "settings_gradle"
+    ],
+    "121": [
+      "test_quickjs"
+    ],
+    "122": [
+      "update_vm"
+    ]
+  },
+  "cohesion": {
+    "0": 0.059907834101382486,
+    "1": 0.05254237288135593,
+    "2": 0.054354178842782,
+    "3": 0.07092198581560284,
+    "4": 0.08599033816425121,
+    "5": 0.06025369978858351,
+    "6": 0.0664451827242525,
+    "7": 0.08780487804878048,
+    "8": 0.06463414634146342,
+    "9": 0.0728744939271255,
+    "10": 0.07777777777777778,
+    "11": 0.11092436974789915,
+    "12": 0.15669515669515668,
+    "13": 0.12105263157894737,
+    "14": 0.18333333333333332,
+    "15": 0.2571428571428571,
+    "16": 0.17582417582417584,
+    "17": 0.21794871794871795,
+    "18": 0.2909090909090909,
+    "19": 0.2727272727272727,
+    "20": 0.26666666666666666,
+    "21": 0.24444444444444444,
+    "22": 0.3055555555555556,
+    "23": 0.32142857142857145,
+    "24": 0.42857142857142855,
+    "25": 0.4666666666666667,
+    "26": 0.3333333333333333,
+    "27": 0.4,
+    "28": 0.4,
+    "29": 0.5,
+    "30": 0.6,
+    "31": 0.5,
+    "32": 0.6666666666666666,
+    "33": 0.5,
+    "34": 0.5,
+    "35": 0.6666666666666666,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0,
+    "119": 1.0,
+    "120": 1.0,
+    "121": 1.0,
+    "122": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_src_main_java_com_example_meshchat_ui_chatviewmodel_chatviewmodel",
+      "label": "ChatViewModel",
+      "degree": 62
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_data_message_message",
+      "label": "Message",
+      "degree": 53
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_ai_qsvmclassifier_qsvmclassifier",
+      "label": "QsvmClassifier",
+      "degree": 28
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_data_lorameshservice_lorameshservice",
+      "label": "LoRaMeshService",
+      "degree": 26
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_data_securesessionrepository_securesessionrepository",
+      "label": "SecureSessionRepository",
+      "degree": 23
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_plugin_pluginmanager_pluginmanager",
+      "label": "PluginManager",
+      "degree": 21
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_data_securesessiondao_securesessiondao",
+      "label": "SecureSessionDao",
+      "degree": 20
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_plugin_sentinelplugin_sentinelplugin",
+      "label": "SentinelPlugin",
+      "degree": 19
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_data_iotdevice_iotdevice",
+      "label": "IoTDevice",
+      "degree": 19
+    },
+    {
+      "id": "app_src_main_java_com_example_meshchat_data_chatchannel_chatchannel",
+      "label": "ChatChannel",
+      "degree": 19
+    }
+  ],
+  "surprises": [
+    {
+      "source": "LoRaMeshService",
+      "target": "HybridRouter",
+      "source_files": [
+        "app/src/main/java/com/example/meshchat/data/LoRaMeshService.kt",
+        "app/src/main/java/com/example/meshchat/data/HybridRouter.kt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "QsvmSecurityEngine",
+      "target": "QsvmClassifier",
+      "source_files": [
+        "app/src/main/java/com/example/meshchat/ai/QsvmSecurityEngine.kt",
+        "app/src/main/java/com/example/meshchat/ai/QsvmClassifier.kt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "LoRaMeshService",
+      "target": "SX1278LoRa",
+      "source_files": [
+        "app/src/main/java/com/example/meshchat/data/LoRaMeshService.kt",
+        "app/src/main/java/com/example/meshchat/data/LoRaHAL.kt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "ChatScreen()",
+      "target": "BitChatInspectorSheet()",
+      "source_files": [
+        "app/src/main/java/com/example/meshchat/ui/ChatScreen.kt",
+        "app/src/main/java/com/example/meshchat/ui/BitChatInspectorSheet.kt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "ChatScreen()",
+      "target": "SafetyNumberDialog()",
+      "source_files": [
+        "app/src/main/java/com/example/meshchat/ui/ChatScreen.kt",
+        "app/src/main/java/com/example/meshchat/ui/SafetyNumberDialog.kt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Message` connect `Message` to `PluginManager`, `RadioTransport`, `LoRaMeshService`, `ChatChannel`, `SentinelSecurity`, `ChatViewModel`, `CliLine`, `BitChatInspectorSheet.kt`?",
+      "why": "High betweenness centrality (0.157) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `ChatViewModel` connect `ChatViewModel` to `Message`, `RadioTransport`, `LoRaMeshService`, `SecureSessionRepository`, `ChatChannel`, `CliLine`, `BitChatInspectorSheet.kt`, `GeminiService.kt`?",
+      "why": "High betweenness centrality (0.143) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `LoRaMeshService` connect `LoRaMeshService` to `Message`, `RadioTransport`, `ChatChannel`, `ChatViewModel`, `CliLine`, `LoRaHAL`?",
+      "why": "High betweenness centrality (0.083) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 3 inferred relationships involving `LoRaMeshService` (e.g. with `HybridRouter` and `SX1278LoRa`) actually correct?",
+      "why": "`LoRaMeshService` has 3 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Candidate`, `Error`, `Timeout` to the rest of the system?",
+      "why": "40 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `ByteArray` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.059907834101382486 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Message` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05254237288135593 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

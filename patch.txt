@@ -1,0 +1,15 @@
+    private fun extractSensitiveFactors(message: String): List<String> {
+        val found = mutableListOf<String>()
+        val lower = message.lowercase()
+        val invisibleStripped = lower.replace(Regex("[\\u200B-\\u200D\\uFEFF\\u200E\\u200F\\p{C}]"), "")
+        val spaceStripped = invisibleStripped.replace(Regex("[\\s_\\.\\-]"), "")
+        val normalizedLeetspeak = spaceStripped
+            .replace("@", "a")
+            .replace("0", "o")
+            .replace("1", "i")
+            .replace("3", "e")
+            .replace("4", "a")
+            .replace("5", "s")
+            .replace("7", "t")
+            .replace("$", "s")
+            .replace("!", "i")

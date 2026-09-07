@@ -1,0 +1,1028 @@
+{
+  "app/build.gradle.kts": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087155,
+    "ast_hash": "a1fff949b45dc73640956ca1bc20882e",
+    "semantic_hash": "a1fff949b45dc73640956ca1bc20882e"
+  },
+  "app/src/main/java/com/example/MainActivity.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087198,
+    "ast_hash": "bdf0f3b05921a530a56fbeaf40c05e37",
+    "semantic_hash": "bdf0f3b05921a530a56fbeaf40c05e37"
+  },
+  "app/src/main/java/com/example/meshchat/ai/GeminiService.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087217,
+    "ast_hash": "2e00986d86065ff4464c00a01ee9fac2",
+    "semantic_hash": "2e00986d86065ff4464c00a01ee9fac2"
+  },
+  "app/src/main/java/com/example/meshchat/ai/QsvmClassifier.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087224,
+    "ast_hash": "f941f3884d48b2edce4300c137234b11",
+    "semantic_hash": "f941f3884d48b2edce4300c137234b11"
+  },
+  "app/src/main/java/com/example/meshchat/ai/QsvmSecurityEngine.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908723,
+    "ast_hash": "e9a46df972ddeb2af598853efb1dce30",
+    "semantic_hash": "e9a46df972ddeb2af598853efb1dce30"
+  },
+  "app/src/main/java/com/example/meshchat/ai/SecurityDecision.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087243,
+    "ast_hash": "98838bbfaac0f47a261513761ea6771f",
+    "semantic_hash": "98838bbfaac0f47a261513761ea6771f"
+  },
+  "app/src/main/java/com/example/meshchat/cli/MeshCliEngine.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908725,
+    "ast_hash": "aaa87cdf9164b13aaf9601329e45cf18",
+    "semantic_hash": "aaa87cdf9164b13aaf9601329e45cf18"
+  },
+  "app/src/main/java/com/example/meshchat/data/AppDatabase.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087255,
+    "ast_hash": "221a2bf4d03b050a226a4e4d40dca8db",
+    "semantic_hash": "221a2bf4d03b050a226a4e4d40dca8db"
+  },
+  "app/src/main/java/com/example/meshchat/data/BitChatMeshEngine.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087262,
+    "ast_hash": "6b51dd14ba13e226ee797a2589c2f60c",
+    "semantic_hash": "6b51dd14ba13e226ee797a2589c2f60c"
+  },
+  "app/src/main/java/com/example/meshchat/data/BleConstants.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087267,
+    "ast_hash": "49a4b86a516c8b2850066a30ec98422c",
+    "semantic_hash": "49a4b86a516c8b2850066a30ec98422c"
+  },
+  "app/src/main/java/com/example/meshchat/data/ChatChannel.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087274,
+    "ast_hash": "fc15e7660ee1120cf9a9506ab16136e5",
+    "semantic_hash": "fc15e7660ee1120cf9a9506ab16136e5"
+  },
+  "app/src/main/java/com/example/meshchat/data/ChatChannelDao.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087284,
+    "ast_hash": "1230450ad0b5906ab3b30719c7d05e50",
+    "semantic_hash": "1230450ad0b5906ab3b30719c7d05e50"
+  },
+  "app/src/main/java/com/example/meshchat/data/ChatChannelRepository.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087288,
+    "ast_hash": "b9c574012d1dbad20562fed879e165d1",
+    "semantic_hash": "b9c574012d1dbad20562fed879e165d1"
+  },
+  "app/src/main/java/com/example/meshchat/data/HybridRouter.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087296,
+    "ast_hash": "091c1fa8aa29c429994b2df764d837d4",
+    "semantic_hash": "091c1fa8aa29c429994b2df764d837d4"
+  },
+  "app/src/main/java/com/example/meshchat/data/IoTDevice.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.90873,
+    "ast_hash": "b16ff0b09bd8e9758a230dc9d07a2479",
+    "semantic_hash": "b16ff0b09bd8e9758a230dc9d07a2479"
+  },
+  "app/src/main/java/com/example/meshchat/data/LoRaHAL.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908731,
+    "ast_hash": "0a394f691cace29305e85459998555b3",
+    "semantic_hash": "0a394f691cace29305e85459998555b3"
+  },
+  "app/src/main/java/com/example/meshchat/data/LoRaMeshService.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087315,
+    "ast_hash": "5e01f4ba29da42a5df9e43fd8cccb89c",
+    "semantic_hash": "5e01f4ba29da42a5df9e43fd8cccb89c"
+  },
+  "app/src/main/java/com/example/meshchat/data/LoRaQueue.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908732,
+    "ast_hash": "822c0693c0e4c4d3a02a8cc3ee1cbd14",
+    "semantic_hash": "822c0693c0e4c4d3a02a8cc3ee1cbd14"
+  },
+  "app/src/main/java/com/example/meshchat/data/MeshNotificationManager.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087327,
+    "ast_hash": "3d67a6b7e018a69601f9a44f973d5b27",
+    "semantic_hash": "3d67a6b7e018a69601f9a44f973d5b27"
+  },
+  "app/src/main/java/com/example/meshchat/data/Message.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087331,
+    "ast_hash": "e10bf657b988821d25e5c3193f894cc6",
+    "semantic_hash": "e10bf657b988821d25e5c3193f894cc6"
+  },
+  "app/src/main/java/com/example/meshchat/data/MessageDao.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087336,
+    "ast_hash": "d6fac79b157480e4c23745f63aaed894",
+    "semantic_hash": "d6fac79b157480e4c23745f63aaed894"
+  },
+  "app/src/main/java/com/example/meshchat/data/MessageRepository.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087346,
+    "ast_hash": "c91eccbc29cd666986eb810787fa0653",
+    "semantic_hash": "c91eccbc29cd666986eb810787fa0653"
+  },
+  "app/src/main/java/com/example/meshchat/data/RealBluetoothManager.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087353,
+    "ast_hash": "07165fb8b6ba5dae2872df15edab6dd4",
+    "semantic_hash": "07165fb8b6ba5dae2872df15edab6dd4"
+  },
+  "app/src/main/java/com/example/meshchat/data/SecureSession.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908736,
+    "ast_hash": "4135c017cda8104717c9bcda3ae5e1ed",
+    "semantic_hash": "4135c017cda8104717c9bcda3ae5e1ed"
+  },
+  "app/src/main/java/com/example/meshchat/data/SecureSessionDao.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087365,
+    "ast_hash": "cf9265e6ba3046fe1c40f86d8944c912",
+    "semantic_hash": "cf9265e6ba3046fe1c40f86d8944c912"
+  },
+  "app/src/main/java/com/example/meshchat/data/SecureSessionRepository.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908737,
+    "ast_hash": "a1204cad141cadc1c4f5e96388ca033f",
+    "semantic_hash": "a1204cad141cadc1c4f5e96388ca033f"
+  },
+  "app/src/main/java/com/example/meshchat/data/SentinelCompression.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908738,
+    "ast_hash": "e07fdfe1ba8f04d2c2cd97517faac8f1",
+    "semantic_hash": "e07fdfe1ba8f04d2c2cd97517faac8f1"
+  },
+  "app/src/main/java/com/example/meshchat/data/SentinelImagePacker.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087384,
+    "ast_hash": "57c47a94d09b4c6cc1372932de8dc502",
+    "semantic_hash": "57c47a94d09b4c6cc1372932de8dc502"
+  },
+  "app/src/main/java/com/example/meshchat/data/SentinelPacker.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908739,
+    "ast_hash": "3abf3db50f659ea3473bed5c411df4d6",
+    "semantic_hash": "3abf3db50f659ea3473bed5c411df4d6"
+  },
+  "app/src/main/java/com/example/meshchat/data/SentinelPacket.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087396,
+    "ast_hash": "7824727f8e99744713a2f71fafb2da99",
+    "semantic_hash": "7824727f8e99744713a2f71fafb2da99"
+  },
+  "app/src/main/java/com/example/meshchat/data/math/SentinelMathEngine.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.90874,
+    "ast_hash": "4f38b180355259034075d37b38b009e4",
+    "semantic_hash": "4f38b180355259034075d37b38b009e4"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelCryptoConscrypt.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087405,
+    "ast_hash": "122c9d4a63770a473693a00c7e848d44",
+    "semantic_hash": "122c9d4a63770a473693a00c7e848d44"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelCryptoUtils.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087415,
+    "ast_hash": "583852ec998a74fbb3a67d238e7af3d8",
+    "semantic_hash": "583852ec998a74fbb3a67d238e7af3d8"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelDispatchers.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908742,
+    "ast_hash": "55422a8d957adde159a55648fdbb4c2c",
+    "semantic_hash": "55422a8d957adde159a55648fdbb4c2c"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelExecutor.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087424,
+    "ast_hash": "6d85e65a83f5d7c986f08019c0a99f6a",
+    "semantic_hash": "6d85e65a83f5d7c986f08019c0a99f6a"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelFastCollections.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908743,
+    "ast_hash": "febccb6c42321bf663538458355070ad",
+    "semantic_hash": "febccb6c42321bf663538458355070ad"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelFlows.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087436,
+    "ast_hash": "f9fc0f026cdf5c1abf267eeda37ec368",
+    "semantic_hash": "f9fc0f026cdf5c1abf267eeda37ec368"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelLUT.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908744,
+    "ast_hash": "24468da2cb590a88a11a738a38939ac8",
+    "semantic_hash": "24468da2cb590a88a11a738a38939ac8"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelMatrix.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087448,
+    "ast_hash": "932b9fedc938a83e4e2e1aab18ab7c46",
+    "semantic_hash": "932b9fedc938a83e4e2e1aab18ab7c46"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelMemory.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087455,
+    "ast_hash": "60d66e33ae06668a373cc776700d686a",
+    "semantic_hash": "60d66e33ae06668a373cc776700d686a"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelMessageQueue.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908746,
+    "ast_hash": "dd42b8bc945f7ec03b9b51e183e8390b",
+    "semantic_hash": "dd42b8bc945f7ec03b9b51e183e8390b"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelPriorityQueue.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087465,
+    "ast_hash": "9f73a1038c760b20900ff1ff9794aaaa",
+    "semantic_hash": "9f73a1038c760b20900ff1ff9794aaaa"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelSecurity.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087472,
+    "ast_hash": "63cb4e1ef14d9e17a4ef0740dc113d3f",
+    "semantic_hash": "63cb4e1ef14d9e17a4ef0740dc113d3f"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelSecurityHardening.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087484,
+    "ast_hash": "52c617b8fc7b28f5d0707f48d5205b6f",
+    "semantic_hash": "52c617b8fc7b28f5d0707f48d5205b6f"
+  },
+  "app/src/main/java/com/example/meshchat/perf/SentinelState.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087489,
+    "ast_hash": "164a0329f8ad8601ce66e0911871115f",
+    "semantic_hash": "164a0329f8ad8601ce66e0911871115f"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/PluginAudit.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087493,
+    "ast_hash": "ee9beceb450b1e1cfa6314d9ccb65a9d",
+    "semantic_hash": "ee9beceb450b1e1cfa6314d9ccb65a9d"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/PluginContainer.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.90875,
+    "ast_hash": "1fec3795008f49614addcaed5c9a6405",
+    "semantic_hash": "1fec3795008f49614addcaed5c9a6405"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/PluginHotSwap.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087505,
+    "ast_hash": "0551a7eb5863d697f1202dd4dcf6b492",
+    "semantic_hash": "0551a7eb5863d697f1202dd4dcf6b492"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/PluginIntegrity.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908751,
+    "ast_hash": "f36462c1d641873b21ed043d2ff3efab",
+    "semantic_hash": "f36462c1d641873b21ed043d2ff3efab"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/PluginManager.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908752,
+    "ast_hash": "0774d33e26887808dde652a5bd9dd04d",
+    "semantic_hash": "0774d33e26887808dde652a5bd9dd04d"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/PluginPermissionManager.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087524,
+    "ast_hash": "ed34b27f6891d89a8da8d6dd9b9dbec3",
+    "semantic_hash": "ed34b27f6891d89a8da8d6dd9b9dbec3"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/PluginRecovery.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908753,
+    "ast_hash": "f710b55ba917a78891deb64806150cef",
+    "semantic_hash": "f710b55ba917a78891deb64806150cef"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/PluginSecurity.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087536,
+    "ast_hash": "72413f492d28cc8f28b8db61e9811945",
+    "semantic_hash": "72413f492d28cc8f28b8db61e9811945"
+  },
+  "app/src/main/java/com/example/meshchat/plugin/SentinelPlugin.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908754,
+    "ast_hash": "6181f896d293c90e5c0cec1b9b988439",
+    "semantic_hash": "6181f896d293c90e5c0cec1b9b988439"
+  },
+  "app/src/main/java/com/example/meshchat/scripting/JaninoEngine.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087548,
+    "ast_hash": "a8cb91135a9f1a38f46fcb9ab5b7f902",
+    "semantic_hash": "a8cb91135a9f1a38f46fcb9ab5b7f902"
+  },
+  "app/src/main/java/com/example/meshchat/scripting/LuaEngine.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087555,
+    "ast_hash": "3af75569e1dc22d8a5e60dce4c95405a",
+    "semantic_hash": "3af75569e1dc22d8a5e60dce4c95405a"
+  },
+  "app/src/main/java/com/example/meshchat/scripting/ScriptManager.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908756,
+    "ast_hash": "2e7e29ec4c706b8d107c472908a05bb9",
+    "semantic_hash": "2e7e29ec4c706b8d107c472908a05bb9"
+  },
+  "app/src/main/java/com/example/meshchat/scripting/ScriptType.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087567,
+    "ast_hash": "29092941d9f007eb3233e988958ed643",
+    "semantic_hash": "29092941d9f007eb3233e988958ed643"
+  },
+  "app/src/main/java/com/example/meshchat/ui/AiModelHubSheet.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087574,
+    "ast_hash": "24405c101220a3c71d9a223a2778fb77",
+    "semantic_hash": "24405c101220a3c71d9a223a2778fb77"
+  },
+  "app/src/main/java/com/example/meshchat/ui/BitChatInspectorSheet.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908758,
+    "ast_hash": "04a655a5d66c4a5711df3fea4fc0c5f1",
+    "semantic_hash": "04a655a5d66c4a5711df3fea4fc0c5f1"
+  },
+  "app/src/main/java/com/example/meshchat/ui/ChannelsListScreen.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087586,
+    "ast_hash": "b4b25713521def2b4270f6a8e2febeaf",
+    "semantic_hash": "b4b25713521def2b4270f6a8e2febeaf"
+  },
+  "app/src/main/java/com/example/meshchat/ui/ChatScreen.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087594,
+    "ast_hash": "81d2806d0b889a548d2b1a228268b61b",
+    "semantic_hash": "81d2806d0b889a548d2b1a228268b61b"
+  },
+  "app/src/main/java/com/example/meshchat/ui/ChatViewModel.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087598,
+    "ast_hash": "160318ae8537d053069c90790b826ad1",
+    "semantic_hash": "160318ae8537d053069c90790b826ad1"
+  },
+  "app/src/main/java/com/example/meshchat/ui/MeshPairingSheet.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087605,
+    "ast_hash": "c27a6f0cd9725720d599787510a35b57",
+    "semantic_hash": "c27a6f0cd9725720d599787510a35b57"
+  },
+  "app/src/main/java/com/example/meshchat/ui/MeshSettingsSheet.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908761,
+    "ast_hash": "061495ab5c0f807cfba866873a74d8e2",
+    "semantic_hash": "061495ab5c0f807cfba866873a74d8e2"
+  },
+  "app/src/main/java/com/example/meshchat/ui/PluginScreen.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087617,
+    "ast_hash": "fa216894fb65d9c47fdb020c66d1c9ce",
+    "semantic_hash": "fa216894fb65d9c47fdb020c66d1c9ce"
+  },
+  "app/src/main/java/com/example/meshchat/ui/SafetyNumberDialog.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087627,
+    "ast_hash": "fdf15b89f953ab5513c2365a390b837f",
+    "semantic_hash": "fdf15b89f953ab5513c2365a390b837f"
+  },
+  "app/src/main/java/com/example/meshchat/ui/ScriptEditorScreen.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087632,
+    "ast_hash": "034ddc3630a4f4f625920ba0556056a2",
+    "semantic_hash": "034ddc3630a4f4f625920ba0556056a2"
+  },
+  "app/src/main/java/com/example/meshchat/ui/SetupWizardScreen.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908764,
+    "ast_hash": "037bf27ff8bb69aa616dd266066193a7",
+    "semantic_hash": "037bf27ff8bb69aa616dd266066193a7"
+  },
+  "app/src/main/java/com/example/meshchat/ui/TerminalConsoleSheet.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087644,
+    "ast_hash": "711a7fe7bad94427cc0335b9ba7683d1",
+    "semantic_hash": "711a7fe7bad94427cc0335b9ba7683d1"
+  },
+  "app/src/main/java/com/example/meshchat/util/SentinelEdgeCases.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908765,
+    "ast_hash": "e1a77f1e186d2fc9c86cae1119e99de3",
+    "semantic_hash": "e1a77f1e186d2fc9c86cae1119e99de3"
+  },
+  "app/src/main/java/com/example/meshchat/util/SentinelPerformance.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087658,
+    "ast_hash": "043981ad72ccf964a025150f586f1ce4",
+    "semantic_hash": "043981ad72ccf964a025150f586f1ce4"
+  },
+  "app/src/main/java/com/example/ui/theme/Color.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087663,
+    "ast_hash": "9fcf0e2807cb86758410db05c7d94951",
+    "semantic_hash": "9fcf0e2807cb86758410db05c7d94951"
+  },
+  "app/src/main/java/com/example/ui/theme/Theme.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908767,
+    "ast_hash": "fe38188870f58dd1a31806bc2d9dd915",
+    "semantic_hash": "fe38188870f58dd1a31806bc2d9dd915"
+  },
+  "app/src/main/java/com/example/ui/theme/Type.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087675,
+    "ast_hash": "ed0523afc73a7aaf53d4f9eb90a998bd",
+    "semantic_hash": "ed0523afc73a7aaf53d4f9eb90a998bd"
+  },
+  "app/src/test/java/com/example/ExampleUnitTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908768,
+    "ast_hash": "0cb7176a6017a03930bec79e16d5ca1c",
+    "semantic_hash": "0cb7176a6017a03930bec79e16d5ca1c"
+  },
+  "app/src/test/java/com/example/meshchat/DebugQsvmTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087687,
+    "ast_hash": "4243a942894ffff009d109e41409456d",
+    "semantic_hash": "4243a942894ffff009d109e41409456d"
+  },
+  "app/src/test/java/com/example/meshchat/DualRadioAndFeaturesTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087694,
+    "ast_hash": "cf2a503ca72645d81e2cc6ae0e76b86e",
+    "semantic_hash": "cf2a503ca72645d81e2cc6ae0e76b86e"
+  },
+  "app/src/test/java/com/example/meshchat/LoRaMeshIntegrationTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.90877,
+    "ast_hash": "1ad5e9caa884fddf7ac1d6721085de7f",
+    "semantic_hash": "1ad5e9caa884fddf7ac1d6721085de7f"
+  },
+  "app/src/test/java/com/example/meshchat/MediaAndSecurityTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087708,
+    "ast_hash": "4c6d2450cbf1e18963e522020b9f18f3",
+    "semantic_hash": "4c6d2450cbf1e18963e522020b9f18f3"
+  },
+  "app/src/test/java/com/example/meshchat/MeshNetworkTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087713,
+    "ast_hash": "eadd0aaebb3e651645065fcec7820a37",
+    "semantic_hash": "eadd0aaebb3e651645065fcec7820a37"
+  },
+  "app/src/test/java/com/example/meshchat/QsvmClassifierRigorousTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908772,
+    "ast_hash": "00531f07babbe27c405a681663890c90",
+    "semantic_hash": "00531f07babbe27c405a681663890c90"
+  },
+  "app/src/test/java/com/example/meshchat/QsvmExtremeAdversarialTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908773,
+    "ast_hash": "b6911e67ab335f8a53ab2531d5fab9c9",
+    "semantic_hash": "b6911e67ab335f8a53ab2531d5fab9c9"
+  },
+  "app/src/test/java/com/example/meshchat/plugin/PluginTest.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087734,
+    "ast_hash": "cfa2306e71e470b412c4adfebc4b592f",
+    "semantic_hash": "cfa2306e71e470b412c4adfebc4b592f"
+  },
+  "build.gradle.kts": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087741,
+    "ast_hash": "7668c117ddb574ac088d4d8f6d243e77",
+    "semantic_hash": "7668c117ddb574ac088d4d8f6d243e77"
+  },
+  "clean_ui_modes.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087749,
+    "ast_hash": "1978c1b26c70c730f81cfd8cc78ce642",
+    "semantic_hash": "1978c1b26c70c730f81cfd8cc78ce642"
+  },
+  "fix.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908776,
+    "ast_hash": "e0c4e4b8e54b477028b576380b4eb696",
+    "semantic_hash": "e0c4e4b8e54b477028b576380b4eb696"
+  },
+  "fix_agp9.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087765,
+    "ast_hash": "92abd0033d0f18928f404c45100672bc",
+    "semantic_hash": "92abd0033d0f18928f404c45100672bc"
+  },
+  "fix_andon.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087772,
+    "ast_hash": "7bcbd345016a916ca7565130ad5f2388",
+    "semantic_hash": "7bcbd345016a916ca7565130ad5f2388"
+  },
+  "fix_build.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908778,
+    "ast_hash": "5085078721eefe88940097d56faf2a71",
+    "semantic_hash": "5085078721eefe88940097d56faf2a71"
+  },
+  "fix_build2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087784,
+    "ast_hash": "56454159700f108505b1598897fdf492",
+    "semantic_hash": "56454159700f108505b1598897fdf492"
+  },
+  "fix_build3.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908779,
+    "ast_hash": "11f06d85e5d769184c95841f1df70dd8",
+    "semantic_hash": "11f06d85e5d769184c95841f1df70dd8"
+  },
+  "fix_build4.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087799,
+    "ast_hash": "38d54b8a38ef869d529b6023d1fe09d9",
+    "semantic_hash": "38d54b8a38ef869d529b6023d1fe09d9"
+  },
+  "fix_build5.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087803,
+    "ast_hash": "fed18328e8b97ef273db330e06b501e4",
+    "semantic_hash": "fed18328e8b97ef273db330e06b501e4"
+  },
+  "fix_build7.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908781,
+    "ast_hash": "560e2902f1fecf73946d86c3b18d66ba",
+    "semantic_hash": "560e2902f1fecf73946d86c3b18d66ba"
+  },
+  "fix_build8.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087818,
+    "ast_hash": "2e85f554f3b23e66ab809e9e598f4750",
+    "semantic_hash": "2e85f554f3b23e66ab809e9e598f4750"
+  },
+  "fix_build9.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087822,
+    "ast_hash": "94aa7caa29ba8aaaacabeed02b1b369c",
+    "semantic_hash": "94aa7caa29ba8aaaacabeed02b1b369c"
+  },
+  "fix_buildconfig.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087832,
+    "ast_hash": "c70bf4331a323bc7ca00a1415da3daaa",
+    "semantic_hash": "c70bf4331a323bc7ca00a1415da3daaa"
+  },
+  "fix_deps.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087837,
+    "ast_hash": "8b9d7134cc52febb983177c505425172",
+    "semantic_hash": "8b9d7134cc52febb983177c505425172"
+  },
+  "fix_gemini.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087842,
+    "ast_hash": "37ca50aea1ec476aafec19bf1e2d825a",
+    "semantic_hash": "37ca50aea1ec476aafec19bf1e2d825a"
+  },
+  "fix_imports.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087849,
+    "ast_hash": "20221cdcad3ef29ad9fc05a8c9a48f74",
+    "semantic_hash": "20221cdcad3ef29ad9fc05a8c9a48f74"
+  },
+  "fix_kotlin_plugin.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087853,
+    "ast_hash": "92c7479110d6610b17e49f90e7f99c4c",
+    "semantic_hash": "92c7479110d6610b17e49f90e7f99c4c"
+  },
+  "fix_notification.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908786,
+    "ast_hash": "1693e036e9d783bfcd74b8f1416746e6",
+    "semantic_hash": "1693e036e9d783bfcd74b8f1416746e6"
+  },
+  "fix_service.sh": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087868,
+    "ast_hash": "36b9db7a3d401fcd093a86240a774a18",
+    "semantic_hash": "36b9db7a3d401fcd093a86240a774a18"
+  },
+  "fix_smart_cast.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087873,
+    "ast_hash": "fbd75545989c99ee1b9badfc940d9616",
+    "semantic_hash": "fbd75545989c99ee1b9badfc940d9616"
+  },
+  "fix_smart_cast2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908788,
+    "ast_hash": "cc50a278159c5ba9d15148d22fc3e310",
+    "semantic_hash": "cc50a278159c5ba9d15148d22fc3e310"
+  },
+  "metadata.json": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087884,
+    "ast_hash": "2b2a049cbfb34c44da4d47b560857309",
+    "semantic_hash": "2b2a049cbfb34c44da4d47b560857309"
+  },
+  "patch_andon.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908789,
+    "ast_hash": "e8a6cbcdb04ee54b35999eb3614db3b9",
+    "semantic_hash": "e8a6cbcdb04ee54b35999eb3614db3b9"
+  },
+  "patch_channels.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087899,
+    "ast_hash": "8e235d3781a65128fc9e27172d947c2a",
+    "semantic_hash": "8e235d3781a65128fc9e27172d947c2a"
+  },
+  "patch_channels_2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087903,
+    "ast_hash": "6003638ac5e3ab0b3f016e17a4faec94",
+    "semantic_hash": "6003638ac5e3ab0b3f016e17a4faec94"
+  },
+  "patch_channels_3.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908791,
+    "ast_hash": "93083df8e21cb53502defe03fa3b3327",
+    "semantic_hash": "93083df8e21cb53502defe03fa3b3327"
+  },
+  "patch_cls.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087915,
+    "ast_hash": "f026caa4260853fe68218ccab2e32e92",
+    "semantic_hash": "f026caa4260853fe68218ccab2e32e92"
+  },
+  "patch_connect.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087923,
+    "ast_hash": "cce714cc6e483136c198ea1509f988bf",
+    "semantic_hash": "cce714cc6e483136c198ea1509f988bf"
+  },
+  "patch_cvm.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087927,
+    "ast_hash": "4c32cfd1ac0d5939f1db280b91f7ae54",
+    "semantic_hash": "4c32cfd1ac0d5939f1db280b91f7ae54"
+  },
+  "patch_cvm2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087934,
+    "ast_hash": "e9280e79850ce2f99a3c66b0bf954b2b",
+    "semantic_hash": "e9280e79850ce2f99a3c66b0bf954b2b"
+  },
+  "patch_cvm3.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908794,
+    "ast_hash": "6990eda4ae253e1844ba151447ff5978",
+    "semantic_hash": "6990eda4ae253e1844ba151447ff5978"
+  },
+  "patch_db.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087946,
+    "ast_hash": "48a081f0f76139021ebaf87b5d1d7b16",
+    "semantic_hash": "48a081f0f76139021ebaf87b5d1d7b16"
+  },
+  "patch_db2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908795,
+    "ast_hash": "9e2841fbcaa209beb494e10f01d6847f",
+    "semantic_hash": "9e2841fbcaa209beb494e10f01d6847f"
+  },
+  "patch_gradle.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087958,
+    "ast_hash": "326d3a7847ac6493ef0093f7ffc19757",
+    "semantic_hash": "326d3a7847ac6493ef0093f7ffc19757"
+  },
+  "patch_image.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087963,
+    "ast_hash": "e54386ac66efcf62337a333e1954f781",
+    "semantic_hash": "e54386ac66efcf62337a333e1954f781"
+  },
+  "patch_imports.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087973,
+    "ast_hash": "af6090b8b779a5917c87c49b61badb12",
+    "semantic_hash": "af6090b8b779a5917c87c49b61badb12"
+  },
+  "patch_isenabled.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087977,
+    "ast_hash": "2454b52a3d27358f65ad2b54a4d21b42",
+    "semantic_hash": "2454b52a3d27358f65ad2b54a4d21b42"
+  },
+  "patch_lora.kt": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087985,
+    "ast_hash": "d91916e5e78c7a1e8392b475ed647a5d",
+    "semantic_hash": "d91916e5e78c7a1e8392b475ed647a5d"
+  },
+  "patch_lora.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087992,
+    "ast_hash": "a3f2f2f18be75f160cde281bfc3b288f",
+    "semantic_hash": "a3f2f2f18be75f160cde281bfc3b288f"
+  },
+  "patch_loramesh.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9087996,
+    "ast_hash": "402aaddfd95d56a11fa7db531fd0d854",
+    "semantic_hash": "402aaddfd95d56a11fa7db531fd0d854"
+  },
+  "patch_loramesh2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088006,
+    "ast_hash": "2d83ccf4cef65b48ebd50e95cede80ae",
+    "semantic_hash": "2d83ccf4cef65b48ebd50e95cede80ae"
+  },
+  "patch_loramesh3.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908801,
+    "ast_hash": "373e06a4541aa05d4cfbc297f01dac14",
+    "semantic_hash": "373e06a4541aa05d4cfbc297f01dac14"
+  },
+  "patch_packet.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088018,
+    "ast_hash": "877bee6792c24f2d6f0c5039ab5bdf93",
+    "semantic_hash": "877bee6792c24f2d6f0c5039ab5bdf93"
+  },
+  "patch_pairing.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088025,
+    "ast_hash": "70231f3eac64ab219928b7288f2430bd",
+    "semantic_hash": "70231f3eac64ab219928b7288f2430bd"
+  },
+  "patch_pairing_2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908803,
+    "ast_hash": "550b3834d0bff99d0102af069ca119a3",
+    "semantic_hash": "550b3834d0bff99d0102af069ca119a3"
+  },
+  "patch_pairing_3.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908804,
+    "ast_hash": "ed1a2de9d623c23252f1309849deb644",
+    "semantic_hash": "ed1a2de9d623c23252f1309849deb644"
+  },
+  "patch_pairing_4.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088047,
+    "ast_hash": "d961f13d8d5d8fccc2b591419407c83b",
+    "semantic_hash": "d961f13d8d5d8fccc2b591419407c83b"
+  },
+  "patch_perms.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088051,
+    "ast_hash": "d4863d0ae959be776d0c5b76ecf214be",
+    "semantic_hash": "d4863d0ae959be776d0c5b76ecf214be"
+  },
+  "patch_perms_location.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088058,
+    "ast_hash": "f105c6d54ad143f16ab5cf3226c13bdd",
+    "semantic_hash": "f105c6d54ad143f16ab5cf3226c13bdd"
+  },
+  "patch_plugin.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088063,
+    "ast_hash": "697d7628275430e3a22bc1ba208ce857",
+    "semantic_hash": "697d7628275430e3a22bc1ba208ce857"
+  },
+  "patch_plugin2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088073,
+    "ast_hash": "f170f7a7e330e7cf19156549b5ca2a63",
+    "semantic_hash": "f170f7a7e330e7cf19156549b5ca2a63"
+  },
+  "patch_plugin_enabled.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088078,
+    "ast_hash": "62145a589f5af9cfba98212cb1be89cd",
+    "semantic_hash": "62145a589f5af9cfba98212cb1be89cd"
+  },
+  "patch_plugin_manager.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088085,
+    "ast_hash": "4fbc7250102435616b886ff2a85a00c4",
+    "semantic_hash": "4fbc7250102435616b886ff2a85a00c4"
+  },
+  "patch_qsvm.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088092,
+    "ast_hash": "ebc37f4b32845de1c55859ab34806fe2",
+    "semantic_hash": "ebc37f4b32845de1c55859ab34806fe2"
+  },
+  "patch_qsvm2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088097,
+    "ast_hash": "b7770d2eb41c70e4ef4b860f9aafbb30",
+    "semantic_hash": "b7770d2eb41c70e4ef4b860f9aafbb30"
+  },
+  "patch_qsvm3.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088104,
+    "ast_hash": "7a76feea91f2f45edea6c8a1ef1776c1",
+    "semantic_hash": "7a76feea91f2f45edea6c8a1ef1776c1"
+  },
+  "patch_recovery.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908811,
+    "ast_hash": "31f33ee33c871ec8b5c597f1124c8d8b",
+    "semantic_hash": "31f33ee33c871ec8b5c597f1124c8d8b"
+  },
+  "patch_remove_toggle.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088116,
+    "ast_hash": "fbbd6eb4b3be8d6bb8add861f5832128",
+    "semantic_hash": "fbbd6eb4b3be8d6bb8add861f5832128"
+  },
+  "patch_remove_toggle2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088123,
+    "ast_hash": "8e0c993ef16621768d12657c4def3aec",
+    "semantic_hash": "8e0c993ef16621768d12657c4def3aec"
+  },
+  "patch_repo.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088128,
+    "ast_hash": "7a538806be5c70eb1624ed60be04309b",
+    "semantic_hash": "7a538806be5c70eb1624ed60be04309b"
+  },
+  "patch_screen.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088135,
+    "ast_hash": "5726a5adc75caa82a347f7b0b2259d43",
+    "semantic_hash": "5726a5adc75caa82a347f7b0b2259d43"
+  },
+  "patch_service.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088142,
+    "ast_hash": "16e87c174838acb114c9bf2ab3f85424",
+    "semantic_hash": "16e87c174838acb114c9bf2ab3f85424"
+  },
+  "patch_settings.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088147,
+    "ast_hash": "61ebd3f90bc7b0d9a44ad15a6e19834c",
+    "semantic_hash": "61ebd3f90bc7b0d9a44ad15a6e19834c"
+  },
+  "patch_settings_2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088154,
+    "ast_hash": "964add94473c6e45a06eb3e09a958bc6",
+    "semantic_hash": "964add94473c6e45a06eb3e09a958bc6"
+  },
+  "patch_test.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088159,
+    "ast_hash": "fa585e277a7313f8b68cfd01a2f2e201",
+    "semantic_hash": "fa585e277a7313f8b68cfd01a2f2e201"
+  },
+  "patch_ui.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088166,
+    "ast_hash": "50100a6f1bcb9989c9e8f30984d5fe5d",
+    "semantic_hash": "50100a6f1bcb9989c9e8f30984d5fe5d"
+  },
+  "patch_viewmodel.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908817,
+    "ast_hash": "de7d60e8dd82d0067456783ba98acd00",
+    "semantic_hash": "de7d60e8dd82d0067456783ba98acd00"
+  },
+  "patch_viewmodel2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908818,
+    "ast_hash": "b588f106a4afbcd58bfe3e47325565d5",
+    "semantic_hash": "b588f106a4afbcd58bfe3e47325565d5"
+  },
+  "patch_vm.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088185,
+    "ast_hash": "ac31a9e0c002ca72ad3107a1a78bb16d",
+    "semantic_hash": "ac31a9e0c002ca72ad3107a1a78bb16d"
+  },
+  "patch_vm_10.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088192,
+    "ast_hash": "9b43c57a773346c1175f35690329e691",
+    "semantic_hash": "9b43c57a773346c1175f35690329e691"
+  },
+  "patch_vm_11.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088197,
+    "ast_hash": "fd9364e5d947442d9146d178f7b0e7b3",
+    "semantic_hash": "fd9364e5d947442d9146d178f7b0e7b3"
+  },
+  "patch_vm_12.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088204,
+    "ast_hash": "57e17693901fdfde60aecc6815582b15",
+    "semantic_hash": "57e17693901fdfde60aecc6815582b15"
+  },
+  "patch_vm_13.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908821,
+    "ast_hash": "f7ea256d4a992e534e705de49f84ca1b",
+    "semantic_hash": "f7ea256d4a992e534e705de49f84ca1b"
+  },
+  "patch_vm_2.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088216,
+    "ast_hash": "50345b2f55b93225ac31757840b7e20e",
+    "semantic_hash": "50345b2f55b93225ac31757840b7e20e"
+  },
+  "patch_vm_3.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088223,
+    "ast_hash": "45743f50f069a39b59fe65e101747c95",
+    "semantic_hash": "45743f50f069a39b59fe65e101747c95"
+  },
+  "patch_vm_4.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908823,
+    "ast_hash": "1674c2b1e82803af3002c9354ae23eed",
+    "semantic_hash": "1674c2b1e82803af3002c9354ae23eed"
+  },
+  "patch_vm_5.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088237,
+    "ast_hash": "4a643311f7b788390c52c6b00d6af106",
+    "semantic_hash": "4a643311f7b788390c52c6b00d6af106"
+  },
+  "patch_vm_6.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088242,
+    "ast_hash": "17fc2ed6a4f6b5dd571b6dd6ecbd9053",
+    "semantic_hash": "17fc2ed6a4f6b5dd571b6dd6ecbd9053"
+  },
+  "patch_vm_7.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908825,
+    "ast_hash": "3588cb5efb19fec156bc8fede777505f",
+    "semantic_hash": "3588cb5efb19fec156bc8fede777505f"
+  },
+  "patch_vm_8.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088256,
+    "ast_hash": "b1138e8686079ed83e3ce4b4612b66cc",
+    "semantic_hash": "b1138e8686079ed83e3ce4b4612b66cc"
+  },
+  "patch_vm_9.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.908826,
+    "ast_hash": "64faa69b312211c2df006b7150ddb74b",
+    "semantic_hash": "64faa69b312211c2df006b7150ddb74b"
+  },
+  "rewrite_service.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088268,
+    "ast_hash": "741c970c4066d663ab383827fc0e55c1",
+    "semantic_hash": "741c970c4066d663ab383827fc0e55c1"
+  },
+  "settings.gradle.kts": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088273,
+    "ast_hash": "b1c62ec253ea8695e4e3cc33df67eca1",
+    "semantic_hash": "b1c62ec253ea8695e4e3cc33df67eca1"
+  },
+  "setup_graphify.py": {
+    "mtime": 1788669888.2754147,
+    "seen": 1788670000.908828,
+    "ast_hash": "323a64b6c1327420450792a323a8a4e9",
+    "semantic_hash": "323a64b6c1327420450792a323a8a4e9"
+  },
+  "test_quickjs.gradle": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088287,
+    "ast_hash": "6eecd48debf5d9f30480d26bb19df70d",
+    "semantic_hash": "6eecd48debf5d9f30480d26bb19df70d"
+  },
+  "update_vm.py": {
+    "mtime": 1788647580.0,
+    "seen": 1788670000.9088292,
+    "ast_hash": "a26620159456a787e737d4827b93f9a4",
+    "semantic_hash": "a26620159456a787e737d4827b93f9a4"
+  }
+}
