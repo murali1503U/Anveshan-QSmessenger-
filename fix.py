@@ -1,10 +1,7 @@
-import re
 
-with open("app/src/main/java/com/example/meshchat/ui/ChannelsListScreen.kt", "r") as f:
-    content = f.read()
+with open('unified_esp_mesh/unified_esp_mesh.ino', 'r') as f:
+    code = f.read()
+code = code.replace('server.setNoDelay(true);\n}', 'server.setNoDelay(true);\n  Serial.println(F("[SENTINEL] Ready! AP Started. Listening on port 8266."));\n}')
+with open('unified_esp_mesh/unified_esp_mesh.ino', 'w') as f:
+    f.write(code)
 
-# Fix the dangling parenthesis and brace
-content = re.sub(r'// Radio Transport Selection Sheet\s*\}\s*\)\s*\}', '// Radio Transport Selection Sheet\n', content, flags=re.DOTALL)
-
-with open("app/src/main/java/com/example/meshchat/ui/ChannelsListScreen.kt", "w") as f:
-    f.write(content)
