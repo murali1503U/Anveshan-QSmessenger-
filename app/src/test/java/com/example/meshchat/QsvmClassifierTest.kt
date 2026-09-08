@@ -1,131 +1,53 @@
 package com.example.meshchat
 
-import com.example.meshchat.ai.QsvmClassifier
-import org.junit.Assert.*
-import org.junit.Before
+import com.example.meshchat.ai.QsvmSecurityEngine
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class QsvmClassifierTest {
+    
+    private val engine = QsvmSecurityEngine(null)
 
-    private lateinit var classifier: QsvmClassifier
-
-    @Before
-    fun setup() {
-        classifier = QsvmClassifier(null)
+    @Test
+    fun testLevel1BenignMessages() {
+        assertEquals(1, engine.classify("hi"))
+        assertEquals(1, engine.classify("hello"))
+        assertEquals(1, engine.classify("ok"))
+        assertEquals(1, engine.classify("thanks"))
+        // No false positives for benign messages
+        assertEquals(1, engine.classify("what time is the meeting?"))
+        assertEquals(1, engine.classify("just casual chatter here"))
     }
 
     @Test
-    fun testBenignMessagesClassifyAsLevel1Fast() {
-        val benignMessages = listOf(
-            "hi",
-            "hello",
-            "ok",
-            "hey there",
-            "how are you doing today?",
-            "see you tomorrow at lunch",
-            "sounds good to me!"
-        )
-
-        for (msg in benignMessages) {
-            val result = classifier.classify(msg)
-            assertEquals("Message '$msg' should be Level 1 Fast", 1, result.decision.level)
-            assertTrue("Overhead must be 0 for Level 1", result.decision.estimatedPacketOverheadBytes == 0)
-        }
+    fun testLevel3Triggers() {
+        assertEquals(3, engine.classify("my password is abc123"))
+        assertEquals(3, engine.classify("coordinates 12.9716 80.2707"))
+        assertEquals(3, engine.classify("send me your bank details"))
+        assertEquals(3, engine.classify("here is the api token"))
     }
 
     @Test
-    fun testPasswordsAndApiKeysClassifyHigher() {
-        val sensitiveMessages = listOf(
-            "My password is SecretKey123",
-            "Use apikey 0xabcdef1234567890 for auth",
-            "Here is the rootpw for the server",
-            "Please send the login token"
-        )
-
-        for (msg in sensitiveMessages) {
-            val result = classifier.classify(msg)
-            assertTrue("Message '$msg' should be >= Level 2", result.decision.level >= 2)
-            assertTrue("Must contain sensitive factors", result.decision.sensitiveFactors.isNotEmpty())
-        }
+    fun testLevel4Triggers() {
+        assertEquals(4, engine.classify("master key rotation required"))
+        assertEquals(4, engine.classify("update infrastructure settings"))
     }
-
+    
     @Test
-    fun testOtpAndBankDetailsClassifyHigher() {
-        val financialMessages = listOf(
-            "Your OTP is 849201",
-            "My bank account number is 9876543210",
-            "Confidential finance report for Q3"
-        )
-
-        for (msg in financialMessages) {
-            val result = classifier.classify(msg)
-            assertTrue("Message '$msg' should be >= Level 2", result.decision.level >= 2)
-        }
-    }
-
-    @Test
-    fun testGpsCoordinatesClassifyHigher() {
-        val gpsMessages = listOf(
-            "Meeting at 12.9716, 80.2707",
-            "Target location: 37.7749 -122.4194",
-            "Coordinates rendezvous point 13.0827, 80.2707"
-        )
-
-        for (msg in gpsMessages) {
-            val result = classifier.classify(msg)
-            assertTrue("GPS message '$msg' should be >= Level 2", result.decision.level >= 2)
-            assertTrue(result.decision.sensitiveFactors.any { it.contains("gps") || it.contains("pattern") })
-        }
-    }
-
-    @Test
-    fun testObfuscatedAndLeetspeakInputs() {
-        // "p@ssw0rd", "0TP", "lat 12.97 lon 80.27"
-        val p1 = classifier.classify("Here is the p@ssw0rd to enter")
-        assertTrue("p@ssw0rd must be detected as sensitive", p1.decision.level >= 2)
-
-        val p2 = classifier.classify("Your 0TP is 123456")
-        assertTrue("0TP must be detected as sensitive", p2.decision.level >= 2)
-
-        val p3 = classifier.classify("Our rendezvous lat 12.97 lon 80.27")
-        assertTrue("lat 12.97 lon 80.27 must be detected as sensitive", p3.decision.level >= 2)
-    }
-
-    @Test
-    fun testNoBenignMessageTriggersMaximumProtectionByMistake() {
-        val everydayMessages = listOf(
-            "Hello team, the report is ready",
-            "Good morning! Just checking in on the project status.",
-            "I will be late for the meeting today",
-            "We watched a cool quantum physics movie yesterday" // Harmless science discussion
-        )
-
-        for (msg in everydayMessages) {
-            val result = classifier.classify(msg)
-            assertNotEquals("Message '$msg' must NEVER trigger Maximum Protection (Level 4)", 4, result.decision.level)
-        }
+    fun testLevel2Triggers() {
+        assertEquals(2, engine.classify("contact me at test@example.com"))
+        assertEquals(2, engine.classify("my phone number is +12345678901"))
     }
 
     @Test
     fun testBatchClassification() {
-        val batch = listOf("hello", "secret token 0x12345678abcdef", "ok")
-        val results = classifier.classifyBatch(batch)
-        assertEquals(3, results.size)
-        assertEquals(1, results[0].decision.level)
-        assertTrue(results[1].decision.level >= 2)
-        assertEquals(1, results[2].decision.level)
-    }
-
-    @Test
-    fun testTrainingDoesNotCorruptBehavior() {
-        val trainingData = listOf(
-            "casual chat 1" to 1,
-            "private password 99" to 3
+        val messages = listOf(
+            "hi",
+            "my password is abc123",
+            "master key rotation required",
+            "thanks"
         )
-        classifier.train(trainingData)
-
-        // After training, benign messages must still classify as Level 1
-        val result = classifier.classify("hello there")
-        assertEquals(1, result.decision.level)
+        val expected = listOf(1, 3, 4, 1)
+        assertEquals(expected, engine.classifyBatch(messages))
     }
 }

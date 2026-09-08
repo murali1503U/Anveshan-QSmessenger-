@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class org.bouncycastle.** { *; }
+-dontwarn org.bouncycastle.**
+
+# Fix for OkHttp and Conscrypt missing classes during R8 minification
+-dontwarn org.conscrypt.**
+-dontwarn org.apache.harmony.**
+-dontwarn com.android.org.conscrypt.**
+-dontwarn org.openjsse.**
+-dontwarn okhttp3.internal.platform.**

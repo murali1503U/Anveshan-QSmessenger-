@@ -174,6 +174,40 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
     private val _latestSecurityDecision = MutableStateFlow<com.example.meshchat.ai.SecurityDecision?>(null)
     val latestSecurityDecision: StateFlow<com.example.meshchat.ai.SecurityDecision?> = _latestSecurityDecision.asStateFlow()
 
+    // --- Crypto Core Phase 6 States ---
+    private val _sessionState = MutableStateFlow("Not Established")
+    val sessionState: StateFlow<String> = _sessionState.asStateFlow()
+
+    private val _securityLevelBadge = MutableStateFlow("Standard")
+    val securityLevelBadge: StateFlow<String> = _securityLevelBadge.asStateFlow()
+
+    private val _transportType = MutableStateFlow("Wi-Fi")
+    val transportType: StateFlow<String> = _transportType.asStateFlow()
+
+    private val _handshakeStatus = MutableStateFlow("Idle")
+    val handshakeStatus: StateFlow<String> = _handshakeStatus.asStateFlow()
+
+    private val _keyFingerprint = MutableStateFlow("")
+    val keyFingerprint: StateFlow<String> = _keyFingerprint.asStateFlow()
+
+    private val _messagesSinceRotation = MutableStateFlow(0)
+    val messagesSinceRotation: StateFlow<Int> = _messagesSinceRotation.asStateFlow()
+
+    private val _sessionAgeSeconds = MutableStateFlow(0L)
+    val sessionAgeSeconds: StateFlow<Long> = _sessionAgeSeconds.asStateFlow()
+
+    private val _pskEntryRequired = MutableStateFlow(false)
+    val pskEntryRequired: StateFlow<Boolean> = _pskEntryRequired.asStateFlow()
+
+    fun updateHandshakeStatus(status: String) {
+        _handshakeStatus.value = status
+    }
+
+    fun triggerPskEntry(required: Boolean) {
+        _pskEntryRequired.value = required
+    }
+    // ----------------------------------
+
     fun executeCliCommand(rawCommand: String) {
         val trimmed = rawCommand.trim()
         if (trimmed.isBlank()) return

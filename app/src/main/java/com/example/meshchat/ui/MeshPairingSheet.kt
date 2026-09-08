@@ -435,20 +435,54 @@ fun MeshPairingSheet(
                             singleLine = true,
                             modifier = Modifier.weight(1f)
                         )
-                        Button(
-                            onClick = {
-                                val port = nodePortInput.toIntOrNull() ?: 80
-                                if (port == 8266) {
-                                    viewModel.connectWifiNode(nodeIpInput.trim(), port, nodePskInput.trim())
-                                } else {
-                                    viewModel.connectHttpNode(nodeIpInput.trim(), port)
-                                }
-                            },
-                            modifier = Modifier.weight(1f).align(Alignment.CenterVertically)
-                        ) {
-                            Text("Connect")
+                        OutlinedTextField(
+                            value = nodePskInput,
+                            onValueChange = { nodePskInput = it },
+                            label = { Text("Pre-Shared Key (Required)") },
+                            singleLine = true,
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+                    Button(
+                        onClick = {
+                            val port = nodePortInput.toIntOrNull() ?: 80
+                            if (port == 8266) {
+                                viewModel.connectWifiNode(nodeIpInput.trim(), port, nodePskInput.trim())
+                            } else {
+                                viewModel.connectHttpNode(nodeIpInput.trim(), port)
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                        enabled = nodePskInput.isNotBlank()
+                    ) {
+                        Text("Connect")
+                    }
+
+                    Spacer(Modifier.height(16.dp))
+                    Text(
+                        "Session Security Status",
+                        style = MaterialTheme.typography.labelMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.padding(bottom = 6.dp)
+                    )
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f))
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            val handshakeStatus by viewModel.handshakeStatus.collectAsStateWithLifecycle()
+                            val fingerprint by viewModel.keyFingerprint.collectAsStateWithLifecycle()
+                            val securityBadge by viewModel.securityLevelBadge.collectAsStateWithLifecycle()
+                            
+                            Text("Handshake Status: $handshakeStatus", style = MaterialTheme.typography.bodySmall)
+                            Text("Security Level: $securityBadge", style = MaterialTheme.typography.bodySmall)
+                            if (fingerprint.isNotBlank()) {
+                                Text("Key Fingerprint: $fingerprint", style = MaterialTheme.typography.bodySmall, fontFamily = FontFamily.Monospace)
+                            }
                         }
                     }
+
 
                     if (httpLastError != null || wifiLastError != null) {
                         Surface(
