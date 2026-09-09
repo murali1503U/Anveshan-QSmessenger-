@@ -123,6 +123,41 @@ class ChatChannelRepository(private val chatChannelDao: ChatChannelDao) {
         return channel
     }
 
+    suspend fun createDirectChannelDeterministic(
+        myCallsign: String,
+        peerCallsign: String,
+        securityLevel: Int,
+        preferredTransport: RadioTransport,
+        sharedSecret: String
+    ): ChatChannel {
+        val sortedNames = listOf(myCallsign, peerCallsign).sorted().joinToString("_")
+        val channelId = "direct_$sortedNames"
+        
+        val encKey = if (sharedSecret.isNotBlank()) {
+            val hash = com.example.meshchat.perf.SentinelCryptoConscrypt.sha512(sharedSecret.toByteArray(Charsets.UTF_8))
+            "0x" + hash.joinToString("") { "%02X".format(it) }
+        } else {
+            generateRandomHexKey(16)
+        }
+
+        val channel = ChatChannel(
+            channelId = channelId,
+            name = peerCallsign,
+            description = "Direct peer-to-peer secure channel",
+            type = ChannelType.DIRECT,
+            members = "$peerCallsign, Me",
+            lastMessageText = "Chat created.",
+            lastMessageTimestamp = System.currentTimeMillis(),
+            avatarColorSeed = System.currentTimeMillis(),
+            isDemo = false,
+            encryptionKey = encKey,
+            securityLevel = securityLevel,
+            preferredTransport = preferredTransport
+        )
+        chatChannelDao.insertOrUpdate(channel)
+        return channel
+    }
+
     suspend fun updateLastMessage(channelId: String, text: String, timestamp: Long = System.currentTimeMillis()) {
         chatChannelDao.updateLastMessage(channelId, text, timestamp)
     }

@@ -423,6 +423,25 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
                     // Apply active plugins AFTER RECEIVE
                     incoming = com.example.meshchat.plugin.PluginManager.processIncoming(incoming)
                     
+                    val currentSession = activeSession.value ?: sessionRepository.initializeDefaultSessionIfNeeded()
+                    val myCallsign = currentSession.userCallsign.ifBlank { "Me" }
+
+                    if (incoming.channelId.startsWith("direct_")) {
+                        if (!incoming.channelId.contains(myCallsign)) {
+                            // Drop message not for me
+                            return@collect
+                        }
+                        if (channelRepository.getChannel(incoming.channelId) == null) {
+                            channelRepository.createDirectChannelDeterministic(
+                                myCallsign = myCallsign,
+                                peerCallsign = incoming.sender,
+                                securityLevel = incoming.securityLevel,
+                                preferredTransport = incoming.transport,
+                                sharedSecret = ""
+                            )
+                        }
+                    }
+
                     repository.insert(incoming)
                     val channel = channelRepository.getChannel(incoming.channelId)
                     val channelName = channel?.name ?: incoming.channelId
@@ -505,12 +524,12 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
         if (sharedSecret.isBlank()) return
 
         viewModelScope.launch {
-            val direct = channelRepository.createChannel(
-                name = peerName.trim(),
-                description = "Direct peer-to-peer secure channel",
-                type = com.example.meshchat.data.ChannelType.DIRECT,
-                members = "$peerName, Me",
-                isDemo = false,
+            val session = activeSession.value ?: sessionRepository.initializeDefaultSessionIfNeeded()
+            val myCallsign = session.userCallsign.ifBlank { "Me" }
+
+            val direct = channelRepository.createDirectChannelDeterministic(
+                myCallsign = myCallsign,
+                peerCallsign = peerName.trim(),
                 securityLevel = securityLevel,
                 preferredTransport = preferredTransport,
                 sharedSecret = sharedSecret
